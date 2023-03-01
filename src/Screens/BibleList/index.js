@@ -11,8 +11,7 @@ import { Divider } from "@react-native-material/core";
 const data = require("../../../assets/database/aa.json")
 
 const BibleList = () =>{
-    const [list, setList] = useState('')
-    const [indice, setIndice] = useState('')
+    
     const navigate = useNavigate()
     
     return(

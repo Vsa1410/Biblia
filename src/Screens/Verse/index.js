@@ -9,21 +9,33 @@ import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 const data = require("../../../assets/database/aa.json")
 
 const Verses = () => {
+    //Get the passed params from another page to find the verse
     const id = useParams()
+
+    //Show or Hide the option menu
     const [isShow, setIsShow] = useState(false)
+
+    //Store the text that user wants to share
     const [textToShare, setTextToShare] = useState([])
+    //Store the Book, Chapter and verse of the text that user wants to share
     const [chapter, setChapter] = useState('')
-    console.log(id)
+
     
-    //Function to Show options menu
+    
+    //Function to Show options menu, the text, book chapter and verse were passed to function when press the button
+    //At the function this will be formated to the user to share with someone via Share API
     function handleLongVersePress( text, book, chapter, verse){
         setIsShow(true)
         setTextToShare(text)
+
         setChapter(`${book} ${chapter}:${verse}`)
         console.log(textToShare)
+        //Vibrate when the funtion is called
         Vibration.vibrate(100)
         
     }
+
+    // function to CLOSE options menu
     function handleLongPressClose(){
         setIsShow(false)
         setTextToShare([])
@@ -31,6 +43,8 @@ const Verses = () => {
         
     }
 
+
+    //function that implements the shareAPI
     const onShare = async () => {
         try {
           const result = await Share.share({

@@ -1,9 +1,7 @@
-import { useEffect } from "react";
-import { useState } from "react";
 import {View, ScrollView, StyleSheet, Text} from "react-native";
-import Header from "../../Components/Header/index.js"
+
 import { useNavigate, useParams } from "react-router-native";
-import { Divider, Snackbar, Surface } from "@react-native-material/core";
+
 
 
 
@@ -11,8 +9,9 @@ import { Divider, Snackbar, Surface } from "@react-native-material/core";
 const data = require("../../../assets/database/aa.json")
 
 const Chapter = () =>{
-    const [list, setList] = useState('')
+   
     let id = useParams()
+
     const navigate = useNavigate()
     
     
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
     item : {
         
         
-        width:100,
+        width:80,
         backgroundColor:"#52796f",
         display: "flex",
         justifyContent:"center",
