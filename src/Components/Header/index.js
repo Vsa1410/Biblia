@@ -27,12 +27,15 @@ const Header = () =>{
 const styles = StyleSheet.create({
     header:{
         backgroundColor:"#354f52",
-        height:"15%",
+        height:150,
         minWidth:"100%",
         display:"flex",
         justifyContent:"flex-end",
         alignItems:"flex-start",
-        position:"static"
+        position:"relative",
+        top:0,
+        left:0
+        
             
 
     },

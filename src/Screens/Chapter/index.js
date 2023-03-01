@@ -18,7 +18,7 @@ const Chapter = () =>{
     
       
     return(
-        
+        <View>
             <ScrollView>
                 <Text style={styles.title}>{data[id.id].name}</Text>
                 <View style={styles.view}>
@@ -37,21 +37,27 @@ const Chapter = () =>{
                     </View>
                 </View>
             </ScrollView>
+        </View>
         
     )
 }
 const styles = StyleSheet.create({
     view:{
         
-        minWidth:"100%",
-        paddingTop: 30,
+        
+        
         backgroundColor: "white",
         flexDirection:"row",
         flexWrap:"wrap",
         paddingRight:30,
         rowGap:20,
         columnGap:20,
-        paddingLeft:25,
+        
+        minWidth:"100%",
+        paddingTop: 30,
+        backgroundColor: "white",
+        paddingLeft:20,
+        paddingBottom:100,
    
         
         

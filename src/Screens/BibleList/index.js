@@ -5,6 +5,8 @@ import { Link } from "react-router-native";
 import "../../../assets/database/aa.json"
 import { useNavigate } from "react-router-native";
 import { useParams } from "react-router-native";
+import { Divider } from "@react-native-material/core";
+
 
 const data = require("../../../assets/database/aa.json")
 
@@ -14,44 +16,61 @@ const BibleList = () =>{
     const navigate = useNavigate()
     
     return(
-        <ScrollView style={styles.view}>
+        <View style={styles.fixedView}>       
 
-          {/*<FlatList
-            data={list}
-            renderItem={({item, index}) => <Text style={styles.item} >{(index +1 +"-  ")+item.name}</Text>}
-            onPress={() => setIndice()}
-            />*/}
+            <ScrollView style={styles.view}>
 
-          {data.map((book, index)=>{
-            return(
+              {/*<FlatList
+                data={list}
+                renderItem={({item, index}) => <Text style={styles.item} >{(index +1 +"-  ")+item.name}</Text>}
+                onPress={() => setIndice()}
+                />*/}
 
-              <View styles={styles.card} key={index}>
-                <Text style={styles.item} onPress={(e)=> navigate("/chapters/"+index)} >{book.name}</Text>
+              {data.map((book, index)=>{
+                return(
+
+                  <View styles={styles.card} key={index}>
+                    <Text style={styles.item} onPress={(e)=> navigate("/chapters/"+index)} >{book.name}</Text>
+                    <Divider/>
+                  </View>
+                )
+                })}  
+              <View style={styles.blankSpace}>
+                
               </View>
-            )
-            })}  
-           
-          
-        </ScrollView>
+              
+            </ScrollView>
+        </View>
     )
 }
 const styles = StyleSheet.create({
   item: {
-    padding: 10,
+    padding: 15,
     fontSize: 18,
-    height: 44 ,
-    marginBottom:"5%",
+    
+  
   },
   view:{
         minWidth:"100%",
-        paddingTop: 30,
         backgroundColor: "white",
+        paddingBottom:20,
         paddingLeft:20,
-        paddingBottom:100,
+        paddingTop:20,
+
+       
+        
   },
   card:{
     height: 20,
-    backgroundColor: "blue"
+    backgroundColor: "blue",
+    paddingBottom: 5,
+    padding:10
+  },
+  fixedView:{
+    height:"100%"
+  },
+  blankSpace:{
+    padding:50,
   }
   
 })
