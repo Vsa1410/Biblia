@@ -11,7 +11,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <NativeRouter>
-        <Header/>  
+        <Header
+         backButton ={true}/>  
         <Routes>
           
           <Route path={'/'} element={<Home/>}/>

@@ -13,14 +13,7 @@ const Header = (props) =>{
     return(
         <View style={styles.header}>
             <Text style={styles.title}>Minha Bíblia Digital</Text>
-            <Button
-                onPress={()=> navigate(-1)}
-                title="Voltar"
-                color="white"
-                variant="text"
-                accessibilityLabel="Learn more about this purple button"
-                style={styles.button}
-                />
+            
         </View>
     )
 }

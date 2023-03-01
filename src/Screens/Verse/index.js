@@ -1,8 +1,8 @@
 import { useParams } from "react-router-native";
-import{ Text, StyleSheet, ScrollView, View, Vibration } from "react-native"
+import{ Text, StyleSheet, ScrollView, View, Vibration, Animated } from "react-native"
 import {Alert, Share, Button} from 'react-native';
 import Header from "../../Components/Header/index"
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Stack, IconButton } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
@@ -20,13 +20,16 @@ const Verses = () => {
     //Store the Book, Chapter and verse of the text that user wants to share
     const [chapter, setChapter] = useState('')
 
-    
-    
+    const[isSelected, setSelected] = useState("")
+   
+
     //Function to Show options menu, the text, book chapter and verse were passed to function when press the button
     //At the function this will be formated to the user to share with someone via Share API
     function handleLongVersePress( text, book, chapter, verse){
         setIsShow(true)
+        setSelected(verse - 1)
         setTextToShare(text)
+        
 
         setChapter(`${book} ${chapter}:${verse}`)
         console.log(textToShare)
@@ -40,6 +43,7 @@ const Verses = () => {
         setIsShow(false)
         setTextToShare([])
         setChapter("")
+        setSelected("")
         
     }
 
@@ -76,13 +80,15 @@ const Verses = () => {
                 </View>
             )}
             <Text style={styles.title}>{data[id.chapter].name}  {Number(id.verses) + 1}</Text>
-            <ScrollView>
+            <ScrollView onScroll={isShow?  handleLongPressClose: ""}>
 
                     <ScrollView style={styles.view}>
 
                         {data[id.chapter].chapters[id.verses].map((text, index) =>{
                             return(
-                                <Text key={index} style={styles.text}  onLongPress={(e)=> handleLongVersePress(data[id.chapter].chapters[id.verses][index], data[id.chapter].name, Number(id.verses) + 1, index + 1 )}>{(index + 1) + "  " + text}</Text>
+                                <Text key={index} style={index === isSelected ? styles.textSelected:styles.text}
+                                
+                                onLongPress={(e)=> handleLongVersePress(data[id.chapter].chapters[id.verses][index], data[id.chapter].name, Number(id.verses) + 1, index + 1 )}>{(index + 1) + "  " + text}</Text>
                             )
                         })}
                     </ScrollView>
@@ -100,6 +106,17 @@ const styles = StyleSheet.create({
 
 
     },
+    textSelected:{
+        paddingLeft:15,
+        paddingRight:15,
+        fontSize:18,
+        marginTop:5,
+        color: 'red',
+        
+        
+
+
+    },
     view:{
         paddingBottom:300,
     },
@@ -112,6 +129,7 @@ const styles = StyleSheet.create({
     options:{
         height:60,
         backgroundColor:"#52796f",
+        
         
 
     },
