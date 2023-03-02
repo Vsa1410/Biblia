@@ -5,14 +5,15 @@ import Header from './src/Components/Header';
 import Chapter from './src/Screens/Chapter';
 import Home from './src/Screens/Home';
 import Verses from './src/Screens/Verse';
+import MainHeader from './src/Components/MainHeader';
 
 
 export default function App() {
   return (
     <View style={styles.container}>
       <NativeRouter>
-        <Header
-         backButton ={true}/>  
+         
+        <MainHeader/>
         <Routes>
           
           <Route path={'/'} element={<Home/>}/>

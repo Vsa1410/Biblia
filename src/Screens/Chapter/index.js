@@ -1,5 +1,6 @@
 import {View, ScrollView, StyleSheet, Text} from "react-native";
-
+import { Stack, IconButton } from "@react-native-material/core";
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { useNavigate, useParams } from "react-router-native";
 
 
@@ -19,13 +20,19 @@ const Chapter = () =>{
     return(
         <View>
             <ScrollView>
-                <Text style={styles.title}>{data[id.id].name}</Text>
+                <View style={styles.titleView}>
+                    <IconButton onPress={()=> navigate(-1)} icon={props =>  <Icon name="chevron-left" {...props} />}/>
+                    <Text style={styles.title}>{data[id.id].name}</Text>
+                </View>
                 <View style={styles.view}>
                     {data[id.id].chapters.map((chapter, index)=>{
                         return(
                         
                                 <View style={styles.item} key={index} >
-                                    <Text onPress={(e)=> navigate("/verse/"+ id.id +"/"+ index)} style={styles.card}>{index+1}</Text>
+                                    <View>
+
+                                        <Text onPress={(e)=> navigate("/verse/"+ id.id +"/"+ index)} style={styles.card}>{index+1}</Text>
+                                    </View>
                                 </View>
                                 
                                                     
@@ -85,9 +92,21 @@ const styles = StyleSheet.create({
     },
     title:{
         fontSize:30,
-        paddingLeft:30,
-        paddingTop:20,
-        fontWeight:"bold",
+        
+        
+        
+
+    },
+    titleView:{
+        borderRadius: 0,
+        backgroundColor: "#c1dad3",
+        display:"flex",
+        flexDirection:"row",
+        justifyContent:"flex-start",
+        alignItems: "center"
+
+        
+        
 
     }
 

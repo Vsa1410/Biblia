@@ -74,13 +74,16 @@ const Verses = () => {
                 <View style={styles.options}>
 
                         <View style={styles.optionsIcon}>
-                            <IconButton onPress={onShare} icon={props => <Icon name="share-outline" {...props} />} />
-                            <IconButton onPress={handleLongPressClose} icon={props =>  <Icon name="close-circle" {...props} />}/>
+                            <IconButton style={styles.optionsIconButton} onPress={onShare} icon={props => <Icon name="share-outline" {...props} color={"#cad2c5"} size={40} />} />
+                            <IconButton style={styles.optionsIconButton} onPress={handleLongPressClose} icon={props =>  <Icon name="close-circle" {...props} size={30}/>}/>
                         </View>
                 </View>
             )}
-            <Text style={styles.title}>{data[id.chapter].name}  {Number(id.verses) + 1}</Text>
-            <ScrollView onScroll={isShow?  handleLongPressClose: ""}>
+            <View style={styles.titleView}>
+                <IconButton onPress={()=> navigate(-1)} icon={props =>  <Icon name="chevron-left" {...props} />}/>
+                <Text style={styles.title}>{data[id.chapter].name}  {Number(id.verses) + 1}</Text>
+            </View>
+            <ScrollView /*onScroll={isShow?  handleLongPressClose: ""}*/>
 
                     <ScrollView style={styles.view}>
 
@@ -111,7 +114,9 @@ const styles = StyleSheet.create({
         paddingRight:15,
         fontSize:18,
         marginTop:5,
-        color: 'red',
+        textDecorationLine: "underline",
+        textDecorationStyle: "dotted"
+        
         
         
 
@@ -125,10 +130,15 @@ const styles = StyleSheet.create({
         marginBottom:10,
         marginTop:20,
         paddingLeft:15,
+        
     },
     options:{
         height:60,
         backgroundColor:"#52796f",
+        transition: "1.2s",
+        justifyContent:'space-around',
+        alignItems:"flex-end"
+        
         
         
 
@@ -136,6 +146,25 @@ const styles = StyleSheet.create({
     optionsIcon:{
         display: "flex",
         flexDirection: "row",
+        
+        
+        
+
+    },
+    optionsIconButton:{
+        marginRight:20
+    },
+    titleView:{
+        borderRadius: 0,
+        backgroundColor: "#c1dad3",
+        display:"flex",
+        flexDirection:"row",
+        justifyContent:"flex-start",
+        alignItems: "center"
+
+        
+        
+
     }
 })
 export default Verses
