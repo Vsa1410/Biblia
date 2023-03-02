@@ -2,6 +2,7 @@ import {View, ScrollView, StyleSheet, Text} from "react-native";
 import { Stack, IconButton } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { useNavigate, useParams } from "react-router-native";
+image = require("../../../assets/img/magicpattern-svg-chart-1677793323470.png")
 
 
 
@@ -24,6 +25,7 @@ const Chapter = () =>{
                     <IconButton onPress={()=> navigate(-1)} icon={props =>  <Icon name="chevron-left" {...props} />}/>
                     <Text style={styles.title}>{data[id.id].name}</Text>
                 </View>
+                <ImageBackground source={image} resizeMode="cover" style={styles.image}></ImageBackground>
                 <View style={styles.view}>
                     {data[id.id].chapters.map((chapter, index)=>{
                         return(
@@ -49,24 +51,17 @@ const Chapter = () =>{
 }
 const styles = StyleSheet.create({
     view:{
-        
-        
-        
         backgroundColor: "white",
         flexDirection:"row",
         flexWrap:"wrap",
         paddingRight:30,
         rowGap:20,
         columnGap:20,
-        
         minWidth:"100%",
         paddingTop: 30,
         backgroundColor: "white",
         paddingLeft:20,
-        paddingBottom:100,
-   
-        
-        
+        paddingBottom:100,         
     },
     item : {
         
@@ -98,7 +93,8 @@ const styles = StyleSheet.create({
 
     },
     titleView:{
-        borderRadius: 0,
+        borderBottomLeftRadius:15,
+        borderBottomRightRadius:15,
         backgroundColor: "#c1dad3",
         display:"flex",
         flexDirection:"row",

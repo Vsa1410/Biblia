@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { View, ScrollView, FlatList, Item, Text,StyleSheet, SectionList } from "react-native";
+import { View, ScrollView, FlatList, Item, Text,StyleSheet, SectionList, ImageBackground } from "react-native";
 import { Link } from "react-router-native";
 import "../../../assets/database/aa.json"
 import { useNavigate } from "react-router-native";
 import { useParams } from "react-router-native";
 import { Divider } from "@react-native-material/core";
+import * as Svg from 'react-native-svg';
+
 
 
 const data = require("../../../assets/database/aa.json")
+
 
 const BibleList = () =>{
     
@@ -16,7 +19,7 @@ const BibleList = () =>{
     
     return(
         <View style={styles.fixedView}>       
-
+          
             <ScrollView style={styles.view}>
 
               {/*<FlatList
@@ -55,6 +58,7 @@ const styles = StyleSheet.create({
         paddingBottom:20,
         paddingLeft:20,
         paddingTop:20,
+        
 
        
         

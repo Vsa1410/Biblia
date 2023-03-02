@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
         paddingRight:15,
         fontSize:18,
         marginTop:5,
+        paddingBottom:5,
         
 
 
@@ -128,9 +129,7 @@ const styles = StyleSheet.create({
     title:{
         fontSize:30,
         marginBottom:10,
-        marginTop:20,
-        paddingLeft:15,
-        
+        paddingTop:2,       
     },
     options:{
         height:60,
@@ -160,7 +159,9 @@ const styles = StyleSheet.create({
         display:"flex",
         flexDirection:"row",
         justifyContent:"flex-start",
-        alignItems: "center"
+        alignItems: "center",
+        borderBottomLeftRadius:15,
+        borderBottomRightRadius:15,
 
         
         
