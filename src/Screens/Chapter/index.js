@@ -1,13 +1,13 @@
 import {View, ScrollView, StyleSheet, Text} from "react-native";
-import { Stack, IconButton } from "@react-native-material/core";
+import { Stack, IconButton, Divider } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { useNavigate, useParams } from "react-router-native";
-image = require("../../../assets/img/magicpattern-svg-chart-1677793323470.png")
 
 
 
 
 
+const bookInfo = require("../../../assets/database/info.json")
 const data = require("../../../assets/database/aa.json")
 
 const Chapter = () =>{
@@ -25,8 +25,20 @@ const Chapter = () =>{
                     <IconButton onPress={()=> navigate(-1)} icon={props =>  <Icon name="chevron-left" {...props} />}/>
                     <Text style={styles.title}>{data[id.id].name}</Text>
                 </View>
-                <ImageBackground source={image} resizeMode="cover" style={styles.image}></ImageBackground>
+
+                
                 <View style={styles.view}>
+                    <View>
+                        <Text style={styles.subtitle}>{bookInfo[id.id].subtitle}</Text>
+                        <Text style={styles.resume}>{bookInfo[id.id].resume}</Text>
+                        <Divider/>
+                        <Text style={styles.author}>Autor: {bookInfo[id.id].author}</Text>
+                        <Text style={styles.author}>Período histórico: {bookInfo[id.id].historyTime}</Text>
+                    
+                        <Divider/>
+                        <Text style={styles.subtitle} >Capítulos</Text>
+                    </View>
+                    
                     {data[id.id].chapters.map((chapter, index)=>{
                         return(
                         
@@ -61,7 +73,8 @@ const styles = StyleSheet.create({
         paddingTop: 30,
         backgroundColor: "white",
         paddingLeft:20,
-        paddingBottom:100,         
+        paddingBottom:100,
+        justifyContent:"center"         
     },
     item : {
         
@@ -99,10 +112,24 @@ const styles = StyleSheet.create({
         display:"flex",
         flexDirection:"row",
         justifyContent:"flex-start",
-        alignItems: "center"
-
-        
-        
+        alignItems: "center"    
+    },
+    subtitle:{
+        fontSize:24,
+        fontWeight:"bold",
+        paddingLeft:25,
+        paddingBottom:20,
+    },
+    resume:{
+        fontSize:16,
+        paddingLeft:25,
+        paddingBottom:25,
+    },
+    author:{
+        fontWeight:"500",
+        paddingLeft:25,
+        fontSize:16,
+        paddingBottom:20,
 
     }
 

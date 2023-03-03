@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 
     },
     button:{
-        marginTop:20,
+        
         paddingLeft:25,
         
     },
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
         color: "#cad2c5",
         fontSize: 30,
         fontWeight:"bold",
-        paddingLeft:35,
+        paddingLeft:10,
 
         
     },
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         display:"flex",
         flexDirection:"row",
         alignItems:"flex-end",
-        paddingLeft:20,
+        paddingLeft:2,
     }
 })
 export default MainHeader
