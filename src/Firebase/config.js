@@ -1,58 +1,80 @@
-// Import the functions you need from the SDKs you need
+import { useState, useEffect, useRef } from 'react';
+import { Text, View, Platform, StyleSheet } from 'react-native';
+import * as Device from 'expo-device';
+import * as Notifications from 'expo-notifications';
+import { Button } from '@react-native-material/core';
 
-import { initializeApp } from "firebase/app";
+//Config of Notifications
+Notifications.setNotificationHandler({
+  handleNotification: async ()=>({
+    shouldPlaySound: true,
+    shouldSetBadge: true,
+    shouldShowAlert: true,
+  }),
 
-import { getAnalytics } from "firebase/analytics";
-import { getMessaging, getToken } from "firebase/messaging";
-import {PermissionsAndroid} from 'react-native'
-  
+})
+export default function PushNotifications(){
+  const [expoToken, setExpoToken] = useState('');
+  const notificationsReceivedRef = useRef();
+  const notificationResponseRef = useRef();
 
+  async function handleCallNotification() {
+    
+    //Local notifications
+    await Notifications.scheduleNotificationAsync({
+      content:{
+        title: "Hello, notificação",
+        body: "veja o que estamos fazendo",
+        sound: true
 
+      },
+      trigger:{
 
-// TODO: Add SDKs for Firebase products that you want to use
+        seconds: 5,
+      }
+    })
+  }
+  useEffect(()=>{
+    handleTokenPush()
+    notificationsReceivedRef.current = Notifications.addNotificationReceivedListener((notification)=>{
+      console.log('Notification received', notification)
 
-// https://firebase.google.com/docs/web/setup#available-libraries
+    })
+    notificationResponseRef.current = Notifications.addNotificationResponseReceivedListener(notification => {
+      console.log(notification)
+    })
+  },[])
 
+  //Get token (Id of device)
+  async function handleTokenPush () {
+    const { status } = await Notifications.getPermissionsAsync()
+    if (status != 'granted'){
+      let newStatus = await Notifications.requestPermissionsAsync()
+      
+      if (newStatus === status){
+        alert('Você não possui autorização')
 
-// Your web app's Firebase configuration
-
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
-
-const firebaseConfig = {
-
-  apiKey: "AIzaSyCIeHF79N3qF9a2MgJN6lgMTnbiuwbhXQw",
-
-  authDomain: "biblia-e1694.firebaseapp.com",
-
-  databaseURL: "https://biblia-e1694-default-rtdb.firebaseio.com",
-
-  projectId: "biblia-e1694",
-
-  storageBucket: "biblia-e1694.appspot.com",
-
-  messagingSenderId: "101919531812",
-
-  appId: "1:101919531812:web:727f71a4130035583109b1",
-
-  measurementId: "G-GGHMV8LQT1"
-
-};
-
-function requestPermission() {
-    console.log('Requesting permission...');
-    Notification.requestPermission().then((permission) => {
-      if (permission === 'granted') {
-        console.log('Notification permission granted.');
-    }})
-}    
-// Initialize Firebase
-
-const app = initializeApp(firebaseConfig);
-
-const messaging = getMessaging(app);
-getToken(messaging, {vapidKey: "BBH_bXiLWKWi9YoFMpZG86QyWufhlYJ7kVcG65lbE0UZYdMtxv-piEpleLte6zkXuPq0hKp4q0d7wvMRmG2U1lw"});
+      }
 
 
-const analytics = getAnalytics(app);
+    }
+    let token = (await (await Notifications.getExpoPushTokenAsync()).data)
+    setExpoToken(token)
+  }
+
+
+  return (
+    <View style={styles.container}> 
+      <Text>Sistema de Notificações</Text>
+      <Button onPress={handleCallNotification} color={"error"}>Chamar</Button>
+      <Text>{expoToken}</Text>
+    </View>
+  )
+}
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    alignItems: "center",
+    justifyContent: "center",
+  }
+})

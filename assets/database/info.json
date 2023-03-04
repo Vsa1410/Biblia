@@ -3,11 +3,395 @@
 "resume":"Gênesis é o primeiro livro da Bíblia Sagrada, Nele temos a história do início da humanidade.                                                            No princípio. Estas são as primeiras palavras do primeiro livro nas nossas Bíblias. A partir desta introdução, o relato descreve, em termos muito resumidos, a criação do Universo e a história dos primeiros seres humanos. O livro de Gênesis abrange um período de tempo maior do que qualquer outro dos livros bíblicos, e apresenta informações fundamentais para compreender os demais. Vamos conhecer um pouco deste livro. Gênesis é um dos livros atribuídos a Moisés, personagem importante dos quatro livros que o seguem. Serve para explicar ao povo judeu suas raízes genealógicas e, mais importante, o propósito de Deus para este povo. Este livro responde, também, a questões naturais de pessoas de quaisquer nações que buscam entendimento de suas origens e da vontade do seu Criador. ",
 "subtitle": "O Livro de Começos",
 "historyTime": "4143 aC a 1774 aC" },
+
 {"name": "Exodo",
 "author": "Moisés",
-"resume":"Um dos principais objetivos do livro de Gênesis foi explicar as raízes do povo judeu como descendentes do patriarca Abraão. Iniciando com um resumo rápido das mudanças mais importantes nas gerações depois de José, o livro de Êxodo então foca o estabelecimento da nação de Israel durante a vida de Moisés. Depois dos primeiros dois capítulos, que incluem uma narração rápida dos primeiros 80 anos da vida de Moisés, o resto do livro relata os acontecimentos durante um período de um pouco mais de um ano. Durante este período, Deus constituiu a nação de Israel, cumprindo uma das três partes da promessa feita a Abraão séculos antes (veja Gênesis 12:1-3). Quando uma nova nação é formada, é comum a preparação de algum documento que define os princípios pelos quais o povo será governado. Conhecemos este documento como constituição. Podemos olhar para o livro de Êxodo, especialmente o trecho começando com os dez mandamentos (capítulo 20 em diante) como a constituição da nação de Israel. A partir deste capítulo, Deus anuncia ao povo os princípios desta teocracia. Esta parte da revelação de Deus teve um grande impacto no futuro do povo judeu, e tem influenciado sistemas de lei adotados por muitas outras nações ao longo dos últimos 3.500 anos. ",
+"resume":"Um dos principais objetivos do livro de Gênesis foi explicar as raízes do povo judeu como descendentes do patriarca Abraão. Iniciando com um resume rápido das mudanças mais importantes nas gerações depois de José, o livro de Êxodo então foca o estabelecimento da nação de Israel durante a vida de Moisés. Depois dos primeiros dois capítulos, que incluem uma narração rápida dos primeiros 80 anos da vida de Moisés, o resto do livro relata os acontecimentos durante um período de um pouco mais de um ano. Durante este período, Deus constituiu a nação de Israel, cumprindo uma das três partes da promessa feita a Abraão séculos antes (veja Gênesis 12:1-3). Quando uma nova nação é formada, é comum a preparação de algum documento que define os princípios pelos quais o povo será governado. Conhecemos este documento como constituição. Podemos olhar para o livro de Êxodo, especialmente o trecho começando com os dez mandamentos (capítulo 20 em diante) como a constituição da nação de Israel. A partir deste capítulo, Deus anuncia ao povo os princípios desta teocracia. Esta parte da revelação de Deus teve um grande impacto no futuro do povo judeu, e tem influenciado sistemas de lei adotados por muitas outras nações ao longo dos últimos 3.500 anos. ",
 "subtitle": "O Livro da Lei de Deus",
-"historyTime":"1446-1406 a.C"},
-{}]
+"historyTime":" 1446 e 1406 a.C."},
+{
+    "name": "Levíticos",
+    "author":"Moisés",
+    "resume": "O livro de Levítico é o terceiro livro da Bíblia hebraica e do Antigo Testamento cristão. Ele é composto de 27 capítulos e contém leis e mandamentos religiosos dados por Deus a Moisés para o povo de Israel. O livro começa com instruções sobre como oferecer sacrifícios a Deus, incluindo ofertas de animais e ofertas de cereais. Também descreve o papel dos sacerdotes na realização desses rituais. Levítico também contém leis sobre pureza ritual e higiene, incluindo a proibição de comer certos alimentos, como carne de porco e frutos do mar. Também são abordados temas como a lepra e as leis de limpeza após o nascimento de uma criança. O livro aborda a santidade de Deus e a importância de manter-se santo e puro. Ele também inclui o Dia da Expiação, um dia especial de arrependimento e purificação para o povo de Israel.    O livro de Levítico é considerado um livro importante para a compreensão da teologia judaica e cristã, especialmente em relação à lei e à santidade. Embora algumas de suas leis possam parecer irrelevantes para a vida moderna, muitos dos princípios que ele apresenta ainda são relevantes para os crentes hoje.",
+    "subtitle": "O livro da santidade ",
+    "historyTime":" 1446 e 1406 a.C." },
+{
+    "name": "Números",
+    "author":"Moisés",
+    "resume":" O livro de Números é o quarto livro da Bíblia hebraica e do Antigo Testamento cristão. Ele contém relatos sobre a peregrinação do povo de Israel pelo deserto após a saída do Egito. O livro começa com um recenseamento do povo e segue com relatos de viagens, acampamentos e conflitos durante a jornada.    Também é descrito o estabelecimento da lei e da ordem entre o povo, incluindo a designação de líderes e sacerdotes.   O livro de Números inclui histórias notáveis, como a de Balaão e sua jumenta falante, e a rebelião de Coré.  No geral, o livro de Números destaca a fidelidade de Deus em cumprir suas promessas e a importância da obediência do povo a Ele. Ele também aponta para a futura conquista da Terra Prometida, que seria liderada por Josué após a morte de Moisés.",
+    "historyTime":"1446 e 1406 a.C.",
+    "subtitle":"O livro das contagens"
+},
+{
+    "name": "Deuteronômio",
+    "author": "Moisés",
+    "historyTime": "Século XIII a.C.",
+    "resume": "O livro de Deuteronômio é o quinto livro da Bíblia hebraica e do Antigo Testamento cristão. Ele consiste em uma série de discursos que Moisés fez ao povo de Israel pouco antes de sua morte. Os discursos reiteram as leis e os mandamentos que Deus deu ao povo e exortam a obediência a Ele. Deuteronômio também inclui histórias sobre a história de Israel, incluindo o êxodo do Egito, e apresenta o conceito de um único Deus. O livro de Deuteronômio é considerado um dos livros mais importantes do Antigo Testamento e é frequentemente citado em todo o Novo Testamento."
+},
+{
+    "name": "O livro de Josué",
+    "author": "Autor desconhecido (provavelmente escrito por Josué ou alguém próximo a ele)",
+    "historyTime": "O livro de Josué abrange um período histórico de aproximadamente 25 anos, que começa com a morte de Moisés e a liderança de Josué na conquista da Terra Prometida, cerca de 1400 a.C.",
+    "resume": "O livro de Josué descreve a conquista da Terra Prometida pelos israelitas após sua jornada pelo deserto. Josué, o sucessor de Moisés, lidera o povo em batalhas contra os habitantes cananeus da terra. O livro destaca a fidelidade de Deus em cumprir Suas promessas e a importância da obediência e da aliança com Ele. Josué divide a terra entre as doze tribos de Israel e morre em idade avançada. O livro termina com um apelo a Israel para servir a Deus e obedecer à Sua lei."
+},
+{
+    "name": "Juizes",
+    "author": "Desconhecido (possivelmente Samuel)",
+    "historyTime": "Cerca de 1200-1000 a.C., após a conquista de Canaã pelos israelitas e antes da monarquia unida de Israel",
+    "resume": "O livro de Juizes conta a história dos líderes militares, chamados de juízes, que Deus levantou para libertar o povo de Israel de seus opressores. O livro inclui contos notáveis, como a história de Débora e Baraque, Sansão e o sacrifício de Jéfté. Juizes também apresenta o tema recorrente da infidelidade do povo de Israel a Deus e suas consequências, incluindo a opressão por seus inimigos. O livro termina com uma época de caos e violência na história de Israel, que estabeleceu a necessidade de um rei justo para governar o povo."
+},
+{
+    "name": "Rute",
+    "author": "Desconhecido",
+    "historyTime": "O livro de Rute se passa durante o período dos Juízes, que ocorreu entre 1200 a.C. e 1020 a.C.",
+    "resume": "O livro de Rute conta a história de uma viúva moabita chamada Rute, que se une a sua sogra, Noemi, após a morte de seus maridos. Juntas, elas retornam à cidade de Belém, em Israel, onde Rute encontra trabalho e se casa com Boaz. A história é uma demonstração do amor, lealdade e bondade de Rute, e como Deus recompensou essas virtudes. O livro é também uma ancestralidade de Davi, rei de Israel, e uma ilustração da inclusão dos gentios na comunidade de Deus."
+},
+{
+    "author": "Desconhecido, possivelmente Samuel, Natã e Gade",
+    "historyTime": "Cerca de 1050 a.C.",
+    "resume": "O livro de 1 Samuel é o primeiro de dois livros que relatam a história do povo de Israel durante o período dos Juízes. O livro narra a transição de Israel de uma teocracia liderada por juízes para uma monarquia liderada por Saul, o primeiro rei de Israel. O livro aborda temas como liderança, obediência a Deus e as consequências da desobediência. Ele também apresenta figuras importantes, como Samuel, Saul e Davi, e descreve conflitos com os filisteus. No geral, 1 Samuel destaca a importância de confiar em Deus e seguir seus caminhos, e mostra como Deus pode usar pessoas comuns para cumprir seus propósitos."
+},
+{
+    "author": "Desconhecido (tradicionalmente atribuído a Samuel)",
+    "historyTime": "Cerca de 1000 a.C.",
+    "resume": "O livro de 2 Samuel é uma continuação da história de Davi, o segundo rei de Israel. Ele descreve o reinado de Davi e suas conquistas militares, incluindo a captura de Jerusalém e a expansão do território de Israel. O livro também apresenta relatos sobre a vida pessoal de Davi, incluindo seu adultério com Bate-Seba e sua batalha contra seu filho Absalão. 2 Samuel destaca a fidelidade de Deus em manter suas promessas a Davi, apesar dos erros e fracassos de Davi como líder. O livro é considerado uma parte importante da história de Israel e tem sido uma fonte de inspiração para a literatura e a cultura ocidental."
+},
+{
+    "author": "Desconhecido, possivelmente Jeremias",
+    "historyTime": "Cerca de 970-560 a.C.",
+    "resume": "O livro de 1 Reis é parte da Bíblia hebraica e do Antigo Testamento cristão. Ele continua a narrativa do livro de Samuel e descreve a história dos reis de Israel e de Judá, incluindo Salomão e o seu reinado. O livro destaca a importância da fidelidade a Deus e mostra as consequências da desobediência. Ele também apresenta a história do profeta Elias e sua luta contra os profetas de Baal. O livro de 1 Reis é considerado uma fonte importante de história bíblica e oferece insights sobre a religião, cultura e política do período em que foi escrito."
+},
+{
+    "name": "2 Reis",
+    "author": "Desconhecido (atribuído a Jeremias)",
+    "historyTime": "Cerca de 550 a.C.",
+    "resume": "2 Reis é o décimo primeiro livro da Bíblia hebraica e do Antigo Testamento cristão. Ele descreve a história dos reis de Israel e Judá, começando com o reinado de Acabe em Israel e terminando com o cativeiro babilônico de Judá. O livro destaca a importância da obediência a Deus e apresenta a história de profetas como Eliseu e Elias. Também é relatada a destruição do templo em Jerusalém e a subsequente queda de Judá para a Babilônia."
+},
+{
+    "name": "Livro de Crônicas",
+    "author": "Desconhecido, provavelmente Esdras",
+    "historyTime": "Entre o final do século V e início do século IV a.C., após o retorno dos judeus do exílio na Babilônia",
+    "resume": "O Livro de Crônicas é composto por duas partes e apresenta uma história resumida do povo de Israel, desde Adão até a restauração do templo em Jerusalém. A primeira parte é uma revisão dos livros de Samuel e Reis, enquanto a segunda parte se concentra no reinado de Davi e de seus sucessores até o exílio em Babilônia. O livro enfatiza a importância do culto ao templo e da obediência à lei de Deus. O autor provavelmente foi Esdras, e o livro foi escrito após o retorno dos judeus do exílio na Babilônia, por volta do final do século V e início do século IV a.C."
+},
+{
+    "author": "Desconhecido (geralmente atribuído a Esdras)",
+    "historyTime": "Entre 400 e 250 a.C.",
+    "resume": "O livro de 2 Crônicas é uma continuação do livro de 1 Crônicas, que narra a história dos reis de Israel e Judá. Ele destaca o reinado de Salomão e a construção do Templo em Jerusalém, além de registrar as histórias dos outros reis de Judá. O livro também enfatiza a importância da adoração a Deus e da obediência às suas leis. Embora a autoria seja desconhecida, é geralmente atribuída a Esdras, um escriba judeu que viveu durante o período persa. O livro de 2 Crônicas é uma fonte importante de informações sobre a história e a religião judaicas durante esse período."
+},
+{
+    "Livro": "Esdras",
+    "author": "Possivelmente Esdras",
+    "historyTime": "Entre os séculos V e IV a.C.",
+    "resume": "O livro de Esdras conta a história do retorno do povo de Israel do exílio na Babilônia e a reconstrução do templo de Jerusalém. Esdras, um escriba e sacerdote judeu, lidera o retorno e ajuda a restaurar a adoração a Deus entre o povo. O livro destaca a importância da obediência a Deus e à sua lei, e enfatiza a necessidade de separação do povo judeu das nações pagãs ao seu redor. Também é mencionada a contribuição de Ciro, o rei persa, para a reconstrução do templo e a proteção do povo judeu. O livro de Esdras é considerado uma parte importante da história judaica e cristã, fornecendo informações sobre o período pós-exílio e a restauração da vida religiosa em Jerusalém."
+},
+{
+    "livro": "Neemias",
+    "author": "Possivelmente Neemias",
+    "historyTime": "Século V a.C.",
+    "resume": "O livro de Neemias conta a história de Neemias, um judeu que servia como copeiro do rei persa Artaxerxes, e que liderou a reconstrução das muralhas de Jerusalém após o exílio babilônico. Neemias enfrentou a oposição dos inimigos de Judá, mas perseverou em sua missão com coragem e fé em Deus. O livro também relata a reforma religiosa liderada por Esdras, que ajudou o povo de Israel a retornar à observância da lei de Deus. Neemias é um testemunho da fidelidade de Deus em cumprir suas promessas ao povo de Israel e inspira os leitores a perseverar em sua própria jornada de fé."
+},
+{
+    "author": "Desconhecido",
+    "historyTime": "Cerca de 486-465 a.C.",
+    "resume": "O livro de Ester conta a história de uma jovem judia chamada Ester, que se torna rainha da Pérsia e usa sua posição para salvar seu povo da conspiração de um oficial malvado chamado Hamã. O livro enfatiza a providência divina e a importância da coragem e da lealdade. O livro de Ester é comumente lido durante a festa judaica de Purim, que comemora a salvação do povo judeu relatada no livro."
+},
+{
+    "name": "O livro de Jó",
+    "author": "Autor desconhecido",
+    "historyTime": "Desconhecido, mas provavelmente escrito em algum momento entre o século VI e IV a.C.",
+    "resume": "O livro de Jó é uma história sobre um homem chamado Jó que enfrenta uma série de provações e sofrimentos, incluindo a perda de sua riqueza, família e saúde. O livro explora a questão do sofrimento humano e a questão do porquê Deus permite o sofrimento. Jó permanece fiel a Deus apesar de tudo e eventualmente é recompensado por sua fidelidade. O livro de Jó é considerado um dos mais poéticos e filosóficos da Bíblia e tem sido interpretado de várias maneiras ao longo da história."
+},
+{
+    "author": "Vários autores, incluindo Davi, Salomão, Asafe e outros",
+    "historyTime": "O livro de Salmos foi escrito ao longo de vários séculos, com alguns salmos sendo compostos tão cedo quanto o reinado do rei Davi no século X a.C., e outros sendo escritos até o período pós-exílico no século V a.C.",
+    "resume": "O livro de Salmos é uma coleção de poemas e canções que expressam uma variedade de emoções, incluindo adoração, alegria, tristeza, arrependimento e louvor. Muitos dos salmos foram escritos para serem cantados durante os cultos no Templo de Jerusalém. O livro é dividido em cinco seções principais, cada uma concluída com um hino de louvor. Os salmos são uma importante fonte de inspiração e consolo para os judeus e cristãos até hoje."
+},
+{
+    "livro": "Provérbios",
+    "author": "Vários autores, tradicionalmente atribuído a Salomão",
+    "historyTime": "Cerca de 1000 a.C.",
+    "resume": "O livro de Provérbios é uma coleção de sabedoria e conselhos práticos para a vida diária, tradicionalmente atribuído ao rei Salomão. Ele contém uma série de provérbios curtos e concisos que abordam uma ampla variedade de temas, incluindo sabedoria, justiça, bondade, honestidade e prudência. O livro ensina que a sabedoria vem de Deus e que aqueles que a buscam podem esperar prosperidade e felicidade. Provérbios também destaca a importância da disciplina e do temor do Senhor, e incentiva os leitores a valorizarem a sabedoria acima da riqueza e da fama."
+},
+{
+    "name": "Eclesiastes",
+    "author": "Salomão",
+    "historyTime": "Cerca de 935 a.C - 931 a.C",
+    "resume": "O livro de Eclesiastes é um dos livros sapienciais do Antigo Testamento da Bíblia cristã, atribuído a Salomão. Ele aborda questões filosóficas e existenciais, como a busca pelo sentido da vida, a vaidade das coisas materiais e a inevitabilidade da morte. O livro enfatiza a importância da sabedoria e da obediência a Deus para encontrar significado e propósito na vida. Eclesiastes é considerado um livro de grande valor literário e filosófico, e tem sido objeto de muitos debates teológicos e interpretações ao longo dos séculos."
+},
+{
+    "author": "Salomão",
+    "historyTime": "Cerca de 970-931 a.C.",
+    "resume": "O livro de Cantares, também conhecido como Cântico dos Cânticos, é um livro poético do Antigo Testamento que celebra o amor e a paixão entre um homem e uma mulher. É atribuído ao Rei Salomão, e seu período histórico é datado de cerca de 970-931 a.C. Cantares é uma coleção de poemas líricos que descrevem o amor, a beleza e a intimidade entre os amantes, com imagens vívidas e simbólicas. O livro também pode ser interpretado como uma representação do amor de Deus pelo seu povo, já que muitas das imagens e metáforas são usadas em outras partes da Bíblia para descrever o relacionamento entre Deus e seu povo. O livro de Cantares é um testemunho da beleza e da importância do amor humano e divino."
+},
+{
+    "author": "Isaías",
+    "historyTime": "Isaías profetizou durante o século VIII a.C., durante os reinados dos reis Uzias, Jotão, Acaz e Ezequias, em Judá.",
+    "resume": "O livro de Isaías é um dos principais livros proféticos do Antigo Testamento. Ele contém as profecias do profeta Isaías para o povo de Judá e Jerusalém, exortando-os a se arrependerem de seus pecados e voltarem-se para Deus. O livro é dividido em duas partes principais: os capítulos 1 a 39 contêm profecias relacionadas aos acontecimentos históricos do tempo de Isaías, enquanto os capítulos 40 a 66 contêm profecias sobre a restauração do povo de Israel após o exílio babilônico e a vinda do Messias. Isaías é considerado um livro importante para a compreensão da teologia judaica e cristã, especialmente em relação à salvação e à redenção. "
+},
+{
+    "name": "Jeremias",
+    "author": "Jeremias",
+    "historyTime": "O livro de Jeremias foi escrito durante o período do exílio babilônico, entre os anos de 626 e 586 a.C. Jeremias profetizou a queda de Jerusalém e a destruição do templo, que aconteceu em 586 a.C.",
+    "resume": "O livro de Jeremias é composto por uma coleção de profecias e lamentações que Jeremias proclamou ao povo de Judá antes e durante o exílio babilônico. Ele advertiu o povo sobre o juízo iminente de Deus devido à sua idolatria e injustiça. O livro também inclui visões sobre a restauração de Judá e a vinda do Messias. Jeremias é considerado um dos principais profetas do Antigo Testamento e seu livro é valorizado tanto pela sua mensagem profética quanto pela sua poesia."
+},
+{
+    "Livro": "Lamentações",
+    "author": "Jeremias",
+    "historyTime": "Entre o final do século VII a.C. e o início do século VI a.C.",
+    "resume":"O livro de Lamentações é atribuído a Jeremias, um profeta do Antigo Testamento. O livro foi escrito durante o período em que Jerusalém foi destruída pelos babilônios, entre o final do século VII a.C. e o início do século VI a.C.  Lamentações é uma coleção de poemas que lamentam a destruição de Jerusalém e a queda do Templo, que eram símbolos importantes da presença de Deus entre o povo de Israel. Os poemas expressam tristeza, angústia e arrependimento, e pedem a misericórdia e a restauração de Deus. O livro de Lamentações é considerado uma importante reflexão sobre a dor e a perda, e é frequentemente lido durante períodos de luto e sofrimento. Ele também destaca a importância da fé e da confiança em Deus, mesmo em tempos difíceis."
+},
+{
+    "author": "Ezequiel",
+    "historyTime": "O livro de Ezequiel foi escrito durante o exílio babilônico, por volta do século VI a.C.",
+    "resume": "O livro de Ezequiel é composto por uma série de visões e profecias que Deus revelou a Ezequiel enquanto ele estava no exílio babilônico com o resto do povo de Israel. Ezequiel é chamado por Deus para ser um profeta para o seu povo, e ele recebeu uma mensagem importante de que Deus não havia abandonado o povo de Israel, apesar de seu exílio. Ezequiel descreveu uma série de visões, incluindo uma visão do trono de Deus e uma visão do vale de ossos secos. Ele também profetizou sobre a destruição de Jerusalém e a restauração do templo e do povo de Israel. O livro de Ezequiel é uma mensagem de esperança para o povo de Israel, afirmando que Deus nunca os abandonaria e que um dia eles seriam restaurados em sua terra e em seu relacionamento com Deus."
+},
+{
+    "titulo": "O Livro de Daniel",
+    "author": "Daniel",
+    "historyTime": "Período do exílio babilônico (entre 605 a.C. e 536 a.C.)",
+    "resume": "O Livro de Daniel é um livro do Antigo Testamento cristão e da Bíblia hebraica. Ele relata histórias sobre o profeta Daniel e seus companheiros durante o período do exílio babilônico, quando os judeus foram levados para a Babilônia após a conquista de Jerusalém. O livro contém visões e sonhos proféticos de Daniel, incluindo a visão da estátua e a visão dos quatro animais. Ele também descreve os desafios enfrentados por Daniel e seus amigos em relação à sua fé e práticas religiosas enquanto viviam na corte babilônica. O livro de Daniel é valorizado por sua mensagem de esperança e confiança em Deus em meio às adversidades."
+},
+{
+    "titulo": "Oseias",
+    "author": "Oseias",
+    "historyTime": "O livro de Oseias foi escrito durante o período do Reino de Israel, por volta do século VIII a.C.",
+    "resume": "O livro de Oseias é um dos livros proféticos do Antigo Testamento da Bíblia. Ele é atribuído a Oseias, um profeta que viveu durante o período do Reino de Israel. O livro contém as profecias e os ensinamentos de Oseias sobre a relação de Deus com o povo de Israel. Oseias usa sua própria história pessoal como exemplo para ilustrar como o povo de Israel se afastou de Deus e se envolveu em idolatria e corrupção. O livro de Oseias também destaca a misericórdia e a fidelidade de Deus em perdoar e restaurar aqueles que se arrependem e se voltam para Ele."
+},
+    {
+        "titulo": "Joel",
+        "author": "Joel",
+        "historyTime": "O livro de Joel foi escrito durante o período do Reino de Judá, provavelmente no século V a.C.",
+        "resume": "O livro de Joel é um dos livros proféticos do Antigo Testamento da Bíblia. Ele é atribuído a Joel, um profeta que viveu durante o período do Reino de Judá. O livro contém as profecias de Joel sobre um evento catastrófico que se aproximava, provavelmente uma invasão de gafanhotos. Joel convoca o povo de Judá ao arrependimento e à oração, e promete a intervenção de Deus para salvar o Seu povo. O livro de Joel também fala sobre o derramamento do Espírito de Deus no futuro, e sobre o julgamento de Deus sobre as nações que oprimem Israel."
+    },
+    {
+        "titulo": "Amós",
+        "author": "Amós",
+        "historyTime": "O livro de Amós foi escrito durante o período do Reino de Israel, por volta do século VIII a.C.",
+        "resume": "O livro de Amós é um dos livros proféticos do Antigo Testamento da Bíblia. Ele é atribuído a Amós, um profeta que viveu durante o período do Reino de Israel. O livro contém as profecias e os ensinamentos de Amós sobre a justiça social e a responsabilidade individual. Amós condena a opressão dos pobres e a corrupção das autoridades, e enfatiza a importância da verdadeira adoração a Deus. Ele também faz previsões sobre o julgamento iminente de Deus sobre o povo de Israel por sua infidelidade. O livro de Amós é um chamado à responsabilidade pessoal e social diante de Deus, e enfatiza a importância da justiça e da retidão em todas as áreas da vida."
+    },
+    {
+        "titulo": "Obadias",
+        "author": "Obadias",
+        "historyTime": "O livro de Obadias foi escrito durante o período do Reino de Judá, por volta do século VI a.C.",
+        "resume": "O livro de Obadias é um livro profético do Antigo Testamento da Bíblia. Ele é atribuído a Obadias, um profeta que viveu durante o período do Reino de Judá. O livro contém uma profecia sobre a destruição do povo de Edom por sua arrogância e orgulho. Obadias condena a conduta de Edom em relação ao povo de Judá e prediz que Deus irá julgá-los por seus atos. O livro de Obadias também destaca a justiça e o juízo de Deus, e a sua fidelidade em cumprir as suas promessas."
+    },
+    {
+        "name": "Jonas",
+        "author": "Desconhecido (tradicionalmente atribuído a Jonas)",
+        "historyTime": "O livro de Jonas foi escrito durante o período do Reino de Israel, por volta do século VIII a.C.",
+        "resume": "O livro de Jonas é um dos livros proféticos do Antigo Testamento da Bíblia. Ele conta a história de Jonas, um profeta que Deus enviou para pregar aos habitantes de Nínive, uma grande cidade inimiga de Israel. Jonas, inicialmente, se recusa a obedecer a Deus e foge para longe de Nínive em um navio. Durante a viagem, ele é engolido por um grande peixe e passa três dias dentro dele antes de ser vomitado na praia. Jonas finalmente prega em Nínive e a cidade se arrepende e se volta para Deus, o que leva a uma lição sobre a misericórdia de Deus e Sua preocupação com todos os povos, não apenas Israel. O livro de Jonas é um exemplo da importância da obediência a Deus e da Sua disposição em oferecer segundas chances para aqueles que se arrependem."
+    },
+    {
+        "name": "Miqueias",
+        "author": "Miqueias",
+        "historyTime": "O livro de Miqueias foi escrito durante o período do Reino de Judá, por volta do século VIII a.C.",
+        "resume": "O livro de Miqueias é um dos livros proféticos do Antigo Testamento da Bíblia. Ele é atribuído a Miqueias, um profeta que viveu durante o período do Reino de Judá. O livro contém as profecias e os ensinamentos de Miqueias sobre a justiça social, a idolatria e a apostasia do povo de Judá e de Israel. Miqueias também anuncia o julgamento de Deus sobre aqueles que se afastaram Dele e a restauração que viria através do Messias. O livro de Miqueias destaca a fidelidade e a misericórdia de Deus, bem como a importância da obediência e do arrependimento para a vida do povo de Deus."
+    },
+    {
+        "name": "Naum",
+        "author": "Naum",
+        "historyTime": "O livro de Naum foi escrito durante o século VII a.C., durante o período em que o Império Assírio estava no auge de seu poder.",
+        "resume": "O livro de Naum é um dos livros proféticos do Antigo Testamento da Bíblia. Ele é atribuído a Naum, um profeta que viveu durante o século VII a.C. O livro contém as profecias de Naum sobre a destruição iminente do Império Assírio, que estava aterrorizando o povo de Judá e destruindo suas cidades. Naum descreve a justiça e a vingança de Deus sobre os opressores do seu povo, e como Ele protege e salva aqueles que confiam nele. O livro de Naum também apresenta a misericórdia de Deus e sua disposição de perdoar aqueles que se arrependem e se voltam para ele."
+    },
+    {
+        "name": "Habacuque",
+        "author": "Habacuque",
+        "historyTime": "O livro de Habacuque foi escrito durante o século VII a.C., durante o reinado do rei Josias de Judá.",
+        "resume": "O livro de Habacuque é um dos livros proféticos do Antigo Testamento da Bíblia. Ele é atribuído a Habacuque, um profeta que viveu durante o período do Reino de Judá. O livro contém as profecias e as lamentações de Habacuque sobre a injustiça e a violência presentes em Judá e as perguntas que ele apresenta a Deus sobre o seu plano para lidar com o mal no mundo. Habacuque expressa sua confiança em Deus e na sua justiça, mesmo quando as circunstâncias parecem contrárias a isso. O livro de Habacuque termina com um hino de louvor a Deus, que Habacuque declara ser a sua força e a sua salvação."
+    },
+    {
+        "name": "Sofonias",
+        "author": "Sofonias",
+        "historyTime": "O livro de Sofonias foi escrito durante o reinado do rei Josias, no final do século VII a.C.",
+        "resume": "O livro de Sofonias é um dos livros proféticos do Antigo Testamento da Bíblia. Ele é atribuído a Sofonias, um profeta que viveu durante o reinado do rei Josias de Judá. O livro contém as profecias de Sofonias sobre o julgamento de Deus sobre Judá e outras nações que se afastaram dele. Sofonias condena a idolatria, a corrupção e a opressão, e exorta as pessoas a se arrependerem e se voltarem para Deus antes que seja tarde demais. Ele também prevê a vinda de um remanescente fiel de Judá, que será salvo da destruição e experimentará a restauração sob a liderança de Deus."
+    },
+    {
+        "name": "Ageu",
+        "author": "Ageu",
+        "historyTime": "O livro de Ageu foi escrito durante o período pós-exílico, cerca de 520 a.C.",
+        "resume": "O livro de Ageu é um dos livros proféticos do Antigo Testamento da Bíblia. Ele é atribuído a Ageu, um profeta que viveu durante o período pós-exílico, quando os judeus retornaram a Jerusalém após o exílio na Babilônia. O livro contém as profecias de Ageu sobre a reconstrução do templo em Jerusalém, que havia sido destruído pelos babilônios. Ageu encoraja o povo a priorizar a reconstrução do templo e a adorar a Deus em espírito e em verdade. Ele também enfatiza a importância da obediência a Deus e promete bênçãos para aqueles que o servem fielmente. O livro de Ageu é um lembrete da fidelidade de Deus em cumprir Suas promessas e da importância de priorizar a adoração a Ele em nossas vidas."
+    },
+    {
+        "name": "Zacarias",
+        "author": "Zacarias",
+        "historyTime": "O livro de Zacarias foi escrito durante o período pós-exílico, após o retorno dos judeus do exílio babilônico, por volta do século VI a.C.",
+        "resume": "O livro de Zacarias é um livro profético do Antigo Testamento da Bíblia. Ele é atribuído a Zacarias, um profeta que viveu durante o período pós-exílico, após o retorno dos judeus do exílio babilônico. O livro contém as profecias e as visões de Zacarias sobre a restauração de Jerusalém e do templo, bem como sobre o Messias vindouro. O livro também fala sobre o juízo divino sobre as nações que se opõem a Deus e sobre a vinda de um tempo de paz e prosperidade para o povo de Deus. Zacarias encoraja o povo a continuar a reconstrução do templo e a se arrepender de seus pecados, lembrando-lhes que Deus está com eles e que cumprirá suas promessas."
+    },
+    {
+        "name": "Malaquias",
+        "author": "Malaquias",
+        "historyTime": "O livro de Malaquias foi escrito durante o período do Segundo Templo, por volta do século V a.C.",
+        "resume": "O livro de Malaquias é um dos livros proféticos do Antigo Testamento da Bíblia. Ele é atribuído a Malaquias, um profeta que viveu durante o período do Segundo Templo. O livro contém as profecias e os ensinamentos de Malaquias sobre a relação de Deus com o povo de Israel durante esse período. Malaquias repreende o povo por seu comportamento pecaminoso, incluindo a corrupção religiosa e a infidelidade. Ele também enfatiza a importância da obediência a Deus e a necessidade de um arrependimento genuíno. O livro de Malaquias termina com a promessa de que Deus enviará um mensageiro antes do Dia do Senhor para preparar o caminho para a vinda do Messias."
+    },
+    {
+        "name": "Mateus",
+        "author": "Mateus",
+        "historyTime": "O livro de Mateus foi escrito no final do século I d.C., durante o período do Império Romano.",
+        "resume": "O livro de Mateus é um dos quatro evangelhos do Novo Testamento da Bíblia. É atribuído a Mateus, um dos discípulos de Jesus. O livro relata a vida, o ministério, a morte e a ressurreição de Jesus, bem como suas palavras e ensinamentos. Mateus escreveu para uma audiência judaica, enfatizando a relação entre Jesus e as profecias do Antigo Testamento. O livro inclui algumas das passagens mais conhecidas da Bíblia, como o Sermão da Montanha e a Parábola do Bom Samaritano. Mateus também destaca a natureza divina de Jesus, sua autoridade e seu papel como Messias e Salvador."
+    },
+    {
+        "name": "Marcos",
+        "author": "Tradicionalmente atribuído a Marcos, que era discípulo de Pedro",
+        "historyTime": "O livro de Marcos foi escrito provavelmente entre os anos 60 e 70 d.C., durante o Império Romano.",
+        "resume": "O livro de Marcos é um dos quatro evangelhos do Novo Testamento da Bíblia cristã. Ele relata a vida, os ensinamentos e os milagres de Jesus Cristo, desde seu batismo até sua crucificação e ressurreição. O livro de Marcos é escrito em um estilo simples e direto, enfatizando a ação e os eventos na vida de Jesus. Marcos apresenta Jesus como o Filho de Deus e o Messias, e descreve a natureza divina de seus milagres e ensinamentos. O livro de Marcos é uma importante fonte para a compreensão da teologia cristã e do ministério de Jesus Cristo."
+    },
+    {
+        "name": "Lucas",
+        "author": "Lucas",
+        "historyTime": "O livro de Lucas foi escrito durante o Império Romano, por volta do ano 80-90 d.C.",
+        "resume": "O livro de Lucas é um dos quatro evangelhos do Novo Testamento da Bíblia e é atribuído a Lucas, um médico e companheiro do apóstolo Paulo. O livro contém a história da vida de Jesus, desde seu nascimento até sua ascensão ao céu. Lucas enfatiza a humanidade de Jesus, descrevendo-o como o Salvador de todos os povos, incluindo os pobres e os marginalizados. O livro de Lucas também inclui muitas das parábolas mais conhecidas de Jesus, como a do bom samaritano e a do filho pródigo. Além disso, Lucas é o único evangelho que conta a história do nascimento de João Batista e a visita do anjo Gabriel à Maria. O livro de Lucas é um dos mais importantes da Bíblia e tem sido uma fonte de inspiração e conforto para os cristãos ao longo dos séculos."
+    },
+    {
+        "name": "João",
+        "author": "João, o Apóstolo",
+        "historyTime": "O livro de João foi escrito no final do primeiro século d.C., durante o período do Império Romano.",
+        "resume": "O livro de João é o quarto evangelho do Novo Testamento da Bíblia. Ele é atribuído a João, um dos doze apóstolos de Jesus Cristo. O livro contém os relatos dos ensinamentos e milagres de Jesus, bem como sua morte e ressurreição. João enfatiza a divindade de Jesus e sua relação com Deus, e usa a expressão 'Eu sou' em vários contextos para descrever Jesus. O livro também apresenta algumas das conversas profundas que Jesus teve com seus discípulos e outros indivíduos, incluindo a famosa conversa com Nicodemos sobre o nascimento espiritual. O livro de João é um dos livros mais lidos e estudados do Novo Testamento e é considerado uma fonte importante para a teologia cristã."
+    },
+    {
+        "name": "Atos dos Apóstolos",
+        "author": "Lucas",
+        "historyTime": "O livro de Atos foi escrito no final do século I ou início do século II d.C., após a morte de Jesus e a ascensão de seus discípulos.",
+        "resume": "O livro de Atos é o quinto livro do Novo Testamento da Bíblia e é atribuído a Lucas, o mesmo autor do evangelho de Lucas. O livro descreve o início da Igreja Cristã e o trabalho dos apóstolos, incluindo Pedro, Paulo e outros, em espalhar o evangelho em Jerusalém, Judeia, Samaria e outras regiões do mundo romano. Atos também narra a conversão de Saulo, que mais tarde se tornaria o apóstolo Paulo. O livro de Atos é considerado uma importante fonte histórica para a compreensão do desenvolvimento do cristianismo primitivo e das primeiras comunidades cristãs."
+    },
+    {
+        "name": "Romanos",
+        "author": "Apóstolo Paulo",
+        "historyTime": "O livro de Romanos foi escrito por volta do ano 56-57 d.C., durante o período em que o apóstolo Paulo estava em Corinto.",
+        "resume": "O livro de Romanos é uma das epístolas do Novo Testamento da Bíblia e é atribuído ao apóstolo Paulo. O livro contém as reflexões teológicas de Paulo sobre a salvação e a justificação pela fé em Jesus Cristo. Paulo escreve aos cristãos em Roma para explicar a importância da fé em Jesus como um meio de reconciliação com Deus, independentemente da origem étnica ou cultural. Paulo também discute questões como a lei, o pecado e a graça. O livro de Romanos é considerado uma das obras mais importantes e influentes do Novo Testamento, e é frequentemente citado em discussões teológicas e doutrinárias até hoje."
+    },
+    {
+        "name": "1 Coríntios",
+        "author": "Apóstolo Paulo",
+        "historyTime": "O livro de 1 Coríntios foi escrito por volta do ano 55-56 d.C., durante o ministério missionário do apóstolo Paulo.",
+        "resume": "1 Coríntios é uma das cartas escritas pelo apóstolo Paulo no Novo Testamento da Bíblia. Ela foi endereçada à igreja em Corinto, uma cidade grega conhecida por sua imoralidade e práticas pagãs. A carta aborda diversos problemas enfrentados pela igreja, como divisões, imoralidade sexual, litígios judiciais entre cristãos, distorções da doutrina cristã e questões sobre o culto. Paulo oferece conselhos, repreensões e encorajamento aos coríntios, enfatizando a importância da unidade e da santidade na vida cristã. Ele também aborda questões teológicas importantes, como a ressurreição dos mortos e a natureza da salvação."
+    },
+    {
+        "name": "2 Coríntios",
+        "author": "Apóstolo Paulo",
+        "historyTime": "O livro de 2 Coríntios foi escrito pelo apóstolo Paulo por volta do ano 55-56 d.C.",
+        "resume": "2 Coríntios é uma carta escrita pelo apóstolo Paulo para a igreja em Corinto. Ele aborda vários assuntos, incluindo a liderança da igreja, a contribuição financeira dos membros e a defesa do apostolado de Paulo. A carta também destaca a importância da reconciliação e da união dentro da igreja. Paulo enfatiza a necessidade de uma vida cristã autêntica, baseada no amor de Cristo e no poder do Espírito Santo. Ele exorta os coríntios a permanecerem firmes na fé e a rejeitarem falsos ensinamentos e falsos líderes. 2 Coríntios é uma das cartas mais pessoais de Paulo, e oferece uma visão valiosa sobre a vida e o ministério do apóstolo."
+    },
+    {
+        "name": "Gálatas",
+        "author": "Apóstolo Paulo",
+        "historyTime": "O livro de Gálatas foi escrito por volta de 49 ou 50 d.C., durante o ministério de Paulo em sua segunda viagem missionária.",
+        "resume": "O livro de Gálatas é uma das epístolas escritas por Paulo de Tarso no Novo Testamento da Bíblia. Ele foi escrito para a igreja na região da Galácia, que estava enfrentando conflitos sobre a relação entre a lei judaica e a graça de Deus. Paulo argumenta que a salvação vem pela fé em Jesus Cristo e não por obras da lei. Ele enfatiza que a liberdade em Cristo não significa licença para pecar, mas sim a oportunidade de viver em amor e serviço aos outros. O livro de Gálatas é uma importante fonte de ensinamentos cristãos sobre a salvação pela graça e a liberdade em Cristo."
+    },
+    {
+        "name": "Efésios",
+        "author": "Apóstolo Paulo",
+        "historyTime": "O livro de Efésios foi escrito por Paulo de Tarso durante o seu primeiro aprisionamento em Roma, por volta do ano 60-62 d.C.",
+        "resume": "O livro de Efésios é uma epístola do Novo Testamento da Bíblia, escrita pelo apóstolo Paulo. O livro é endereçado aos cristãos da cidade de Éfeso e contém ensinamentos sobre a natureza da igreja, a união dos cristãos em Cristo e a vida cristã. Paulo enfatiza a graça de Deus e a salvação pela fé em Jesus Cristo. Ele também incentiva os cristãos a viverem de maneira digna do seu chamado e a se comportarem em amor e unidade. O livro de Efésios é uma fonte importante de ensinamentos sobre a igreja e a vida cristã, e tem sido influente na teologia cristã ao longo dos séculos."
+    },
+    {
+        "name": "Filipenses",
+        "author": "Apóstolo Paulo",
+        "historyTime": "O livro de Filipenses foi escrito por volta de 60-62 d.C., durante o período em que o apóstolo Paulo estava preso em Roma.",
+        "resume": "O livro de Filipenses é uma das epístolas do apóstolo Paulo no Novo Testamento da Bíblia. É uma carta escrita para a igreja em Filipos, uma cidade na região da Macedônia. Paulo expressa sua alegria e gratidão pela comunidade em Filipos e encoraja os cristãos a permanecerem firmes na fé. Ele também fala sobre a importância de se ter humildade e amor uns pelos outros. O livro de Filipenses é conhecido por seus ensinamentos sobre a alegria e a paz que vêm de uma vida em comunhão com Cristo. Paulo também fala sobre a importância de se concentrar nas coisas que são verdadeiras, nobres, justas, puras, amáveis e admiráveis."
+    },
+    {
+        "name": "Colossenses",
+        "author": "Apóstolo Paulo",
+        "historyTime": "O livro de Colossenses foi escrito por volta de 60 d.C., durante o período em que o apóstolo Paulo estava preso em Roma.",
+        "resume": "O livro de Colossenses é uma das cartas do apóstolo Paulo no Novo Testamento da Bíblia. Ele foi escrito para os cristãos da cidade de Colossos, na Ásia Menor. A carta destaca a importância de Jesus Cristo como a imagem visível do Deus invisível, e como Ele é o fundamento da fé cristã. Paulo também aborda questões como a santidade, a vida em comunidade e a importância da oração. O livro de Colossenses também inclui orientações para a vida familiar e profissional, encorajando os cristãos a viver de forma justa e agradável a Deus em todas as áreas de suas vidas."
+    },
+    {
+        "name": "1 Tessalonicenses",
+        "author": "Apóstolo Paulo",
+        "historyTime": "O livro de 1 Tessalonicenses foi escrito por volta de 50-51 d.C., durante a segunda viagem missionária do Apóstolo Paulo.",
+        "resume": "O livro de 1 Tessalonicenses é uma carta escrita pelo Apóstolo Paulo para a igreja em Tessalônica. Paulo agradece a Deus pela fé e amor dos tessalonicenses e os encoraja a continuar vivendo em santidade e amor, aguardando a segunda vinda de Jesus Cristo. Ele também responde a algumas perguntas sobre a volta de Cristo e a ressurreição dos mortos. Paulo enfatiza a importância da unidade e do amor entre os irmãos e encoraja a igreja a viver em paz com todos. Ele também fala sobre seu próprio ministério e sua preocupação com a salvação dos tessalonicenses."
+    },
+    {
+        "name": "2 Tessalonicenses",
+        "author": "Paulo de Tarso",
+        "historyTime": "O livro de 2 Tessalonicenses foi escrito pelo apóstolo Paulo, provavelmente durante sua segunda viagem missionária, por volta do ano 50-51 d.C.",
+        "resume": "O livro de 2 Tessalonicenses é uma carta escrita por Paulo aos cristãos em Tessalônica. A carta aborda questões relacionadas à volta de Cristo e ao fim dos tempos, encorajando os crentes a permanecerem firmes na fé e a não se deixarem enganar por falsas doutrinas. Paulo também exorta os crentes a trabalharem e a serem produtivos enquanto esperam pela volta de Cristo. A carta de Paulo enfatiza a importância da unidade entre os cristãos e incentiva a oração e o amor fraterno. O livro de 2 Tessalonicenses é uma das principais fontes bíblicas sobre a escatologia cristã, ou seja, as crenças sobre o fim dos tempos e a volta de Cristo."
+    },
+    {
+        "name": "1 Timóteo",
+        "author": "Apóstolo Paulo",
+        "historyTime": "1 Timóteo foi escrito pelo Apóstolo Paulo no início do século I, durante o período do Império Romano.",
+        "resume": "1 Timóteo é uma das epístolas do Novo Testamento da Bíblia, escrita pelo Apóstolo Paulo. O livro é uma carta pessoal escrita por Paulo para seu discípulo Timóteo, a quem ele confiou a liderança da igreja em Éfeso. 1 Timóteo contém conselhos e orientações de Paulo para Timóteo sobre como liderar a igreja e ensinar a verdade de Deus. O livro também aborda questões importantes, como a importância da oração, a conduta dos líderes da igreja, a santidade e a disciplina na vida cristã. 1 Timóteo é um livro importante para a compreensão da teologia e da prática cristãs, especialmente em relação à liderança da igreja e à conduta dos cristãos."
+    },
+    {
+        "name": "2 Timóteo",
+        "author": "Apóstolo Paulo",
+        "historyTime": "O livro de 2 Timóteo foi escrito pelo apóstolo Paulo durante o século I d.C., provavelmente entre 64 e 67 d.C.",
+        "resume": "2 Timóteo é uma carta escrita pelo apóstolo Paulo a Timóteo, seu discípulo e colaborador no ministério cristão. A carta foi escrita enquanto Paulo estava em prisão, e ele instrui Timóteo a permanecer fiel à verdade do Evangelho e a ensinar e liderar com integridade. Paulo encoraja Timóteo a não desanimar diante das dificuldades e a continuar pregando a Palavra de Deus. O livro também enfatiza a importância da fidelidade e do compromisso dos cristãos com a obra de Deus, bem como a esperança da vida eterna em Cristo Jesus."
+    },
+    {
+        "name": "Tito",
+        "author": "Apóstolo Paulo",
+        "historyTime": "O livro de Tito foi escrito no final do primeiro século d.C., provavelmente entre os anos 62 e 64 d.C.",
+        "resume": "O livro de Tito é uma das cartas do Novo Testamento da Bíblia, escrita pelo apóstolo Paulo a Tito, um dos líderes cristãos na ilha de Creta. A carta contém instruções de Paulo sobre a organização e liderança da igreja em Creta. Ele enfatiza a importância da integridade e do bom comportamento entre os líderes da igreja, e exorta os crentes a viverem de forma santa e piedosa. Paulo também adverte contra falsos ensinadores e aconselha Tito sobre como lidar com eles. O livro de Tito é uma importante fonte de instrução para líderes da igreja e um exemplo de como a verdade e a justiça devem ser aplicadas no contexto da comunidade cristã."
+    },
+    {
+        "name": "Filemon",
+        "author": "Apóstolo Paulo",
+        "historyTime": "O livro de Filemon foi escrito durante o período do ministério do apóstolo Paulo, provavelmente entre os anos 60 e 62 d.C.",
+        "resume": "O livro de Filemon é uma carta pessoal escrita pelo apóstolo Paulo a Filemon, um cristão rico de Colossos. Na carta, Paulo pede a Filemon que perdoe seu escravo fugitivo, Onésimo, que havia se tornado cristão enquanto estava fora. Paulo pede a Filemon que receba Onésimo de volta como um irmão em Cristo e que o trate com bondade. A carta de Paulo a Filemon é um exemplo de como o evangelho deve transformar as relações sociais e econômicas, e também destaca a importância do perdão e da reconciliação no cristianismo."
+    },
+    {
+        "name": "Hebreus",
+        "author": "Autor desconhecido",
+        "historyTime": "O livro de Hebreus foi escrito em algum momento durante o século I d.C., provavelmente antes da destruição do Segundo Templo de Jerusalém em 70 d.C.",
+        "resume": "O livro de Hebreus é um dos livros do Novo Testamento da Bíblia cristã. Apesar de não ser conhecido o seu autor, acredita-se que tenha sido escrito por um cristão judeu. O livro é uma carta que se dirige a uma comunidade cristã de origem judaica e explora a relação entre a antiga aliança de Deus com Israel e a nova aliança através de Jesus Cristo. O autor apresenta Jesus como o sumo sacerdote perfeito e o sacrifício definitivo que remove o pecado e a necessidade de sacrifícios de animais. O livro de Hebreus é considerado uma importante obra teológica que explora as raízes judaicas do cristianismo e a relação entre a fé e a prática cristã."
+    },
+    {
+        "name": "Tiago",
+        "author": "Tiago, irmão de Jesus",
+        "historyTime": "O livro de Tiago foi escrito durante o período do início do cristianismo, por volta do ano 50-60 d.C.",
+        "resume": "O livro de Tiago é uma das epístolas do Novo Testamento da Bíblia. Ele é atribuído a Tiago, irmão de Jesus, e foi escrito para os cristãos que viviam fora da Palestina. O livro contém ensinamentos práticos sobre a vida cristã, incluindo o cuidado com os pobres, a importância da fé em ação, a humildade e a sabedoria. Tiago também aborda temas como a tentação, a paciência e a oração. O livro é famoso por sua afirmação de que a fé sem obras é morta, o que o tornou um tema central no debate teológico sobre a relação entre fé e obras no cristianismo."
+    },
+    {
+        "name": "1 Pedro",
+        "author": "O apóstolo Pedro",
+        "historyTime": "O livro de 1 Pedro foi escrito durante o período do Império Romano, provavelmente entre os anos 62 e 64 d.C.",
+        "resume": "1 Pedro é um livro do Novo Testamento da Bíblia, escrito pelo apóstolo Pedro. O livro é dirigido às comunidades cristãs espalhadas pela Ásia Menor, que estavam enfrentando perseguição e dificuldades. Pedro encoraja os cristãos a perseverarem na fé e a manterem a esperança em meio às provações. Ele também enfatiza a importância da santidade e da conduta exemplar para dar testemunho da fé em Cristo. O livro de 1 Pedro também contém ensinamentos sobre a graça de Deus, a obra salvífica de Cristo e a futura glória que aguarda os crentes."
+    },
+    {
+        "name": "2 Pedro",
+        "author": "O apóstolo Pedro",
+        "historyTime": "O livro de 2 Pedro foi escrito no final do primeiro século d.C., provavelmente entre 90 e 100 d.C.",
+        "resume": "O livro de 2 Pedro é um dos livros do Novo Testamento da Bíblia. É atribuído ao apóstolo Pedro e contém conselhos e exortações para os cristãos sobre como viver uma vida piedosa e resistir às falsas doutrinas. O livro enfatiza a importância do conhecimento da verdade de Deus e da fidelidade a Jesus Cristo. Também adverte sobre falsos mestres que tentam levar os cristãos ao erro e à apostasia. 2 Pedro também menciona a Segunda Vinda de Cristo e o juízo final, enfatizando a necessidade de estar preparado para esse evento. No geral, o livro de 2 Pedro é uma carta pastoral que busca fortalecer a fé e a perseverança dos crentes."
+    },
+    {
+        "name": "1 João",
+        "author": "Apóstolo João",
+        "historyTime": "O livro de 1 João foi escrito no final do século I d.C., provavelmente entre os anos 80 e 90 d.C.",
+        "resume": "O livro de 1 João é uma epístola do Novo Testamento da Bíblia, escrita pelo apóstolo João. Ele escreve para encorajar os crentes e fortalecer sua fé, abordando questões como a natureza de Deus, o pecado, a salvação e o amor cristão. João enfatiza a importância de amar a Deus e aos outros, e alerta contra falsos ensinamentos e o engano dos espíritos malignos. Ele também encoraja os crentes a viverem em obediência a Deus e a seguir o exemplo de Jesus Cristo, o Filho de Deus."
+    },
+    {
+        "name": "2 João",
+        "author": "João",
+        "historyTime": "O livro de 2 João foi escrito durante o final do primeiro século d.C., provavelmente entre os anos 90 e 100 d.C.",
+        "resume": "O livro de 2 João é uma das cartas do Novo Testamento da Bíblia. É atribuído a João, o apóstolo de Jesus Cristo. O livro é dirigido a uma comunidade cristã específica e destaca a importância de permanecer na verdade e evitar a heresia. João enfatiza a necessidade de amor e obediência a Deus e exorta seus leitores a se protegerem contra falsos mestres que negam a divindade de Jesus Cristo. O livro de 2 João também destaca a importância da hospitalidade cristã e encoraja seus leitores a apoiarem aqueles que trabalham na obra de Deus."
+    },
+    {
+        "name": "3 João",
+        "author": "Apóstolo João",
+        "historyTime": "O livro de 3 João foi escrito provavelmente no final do primeiro século d.C., após a morte de Jesus Cristo.",
+        "resume": "O livro de 3 João é uma carta breve escrita pelo apóstolo João, provavelmente a um líder da igreja chamado Gaio. A carta é um encorajamento para Gaio continuar apoiando os missionários que estavam viajando e pregando o evangelho em outras regiões. João expressa sua gratidão pelo serviço de Gaio na igreja e o encoraja a continuar a fazer o bem. O livro também menciona um homem chamado Diótrefes, que se opunha aos missionários e aos ensinamentos de João. João adverte contra a atitude de Diótrefes e destaca a importância de apoiar aqueles que estão pregando a verdade do evangelho."
+    },
+    {
+        "name": "Judas",
+        "author": "Judas (possivelmente irmão de Tiago)",
+        "historyTime": "O livro de Judas foi escrito no final do primeiro século d.C., durante um período em que a igreja cristã estava enfrentando perseguição e conflitos internos.",
+        "resume": "O livro de Judas é uma das epístolas do Novo Testamento da Bíblia. O autor, Judas (possivelmente irmão de Tiago), escreve para alertar os crentes sobre falsos mestres e ensinamentos que estavam infiltrando a igreja. Ele os encoraja a permanecerem firmes na fé e a lutar pela verdade. O livro também descreve a destruição que virá sobre aqueles que se opõem a Deus e sua justiça. Embora seja uma das epístolas mais curtas do Novo Testamento, o livro de Judas contém importantes ensinamentos sobre a defesa da fé e a santidade dos crentes."
+    },
+    {
+        "name": "Apocalipse",
+        "author": "João",
+        "historyTime": "O livro de Apocalipse foi escrito no final do século I d.C., durante o reinado do imperador romano Domiciano.",
+        "resume": "O livro de Apocalipse é o último livro do Novo Testamento da Bíblia e é atribuído ao apóstolo João. O livro contém visões e revelações que João teve enquanto estava exilado na ilha de Patmos. As visões incluem imagens simbólicas e alegóricas que descrevem eventos futuros relacionados ao fim do mundo e à segunda vinda de Cristo. O livro de Apocalipse também fala sobre a batalha entre o bem e o mal, a queda de Babilônia e a vitória final de Deus sobre seus inimigos. Embora o livro seja complexo e muitas vezes interpretado de maneiras diferentes, seu tema principal é a vitória final de Deus e a restauração de todas as coisas em Cristo."
+    }
+
+        
+
+    
 
 
+
+    
+
+]

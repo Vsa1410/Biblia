@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "101919531812",
+    "firebase_url": "https://biblia-e1694-default-rtdb.firebaseio.com",
+    "project_id": "biblia-e1694",
+    "storage_bucket": "biblia-e1694.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101919531812:android:04a0b2bb259672de3109b1",
+        "android_client_info": {
+          "package_name": "com.vsa1410.bible"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101919531812-e7g2g6fsp3f9ocj4d10j732b8clk96u8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVOp_eg4aJy7VcPllobPc54rJRtA8QSNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101919531812-e7g2g6fsp3f9ocj4d10j732b8clk96u8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

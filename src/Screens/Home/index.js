@@ -1,4 +1,6 @@
+import { Button } from "@react-native-material/core";
 import { View, StyleSheet, Text } from "react-native";
+import { Link } from "react-router-native";
 import Header from "../../Components/Header";
 import BibleList from "../BibleList";
 

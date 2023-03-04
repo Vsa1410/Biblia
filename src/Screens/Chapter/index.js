@@ -1,5 +1,5 @@
 import {View, ScrollView, StyleSheet, Text} from "react-native";
-import { Stack, IconButton, Divider } from "@react-native-material/core";
+import { Stack, IconButton, Divider, Button } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { useNavigate, useParams } from "react-router-native";
 
@@ -41,8 +41,8 @@ const Chapter = () =>{
                     
                     {data[id.id].chapters.map((chapter, index)=>{
                         return(
-                        
-                                <View style={styles.item} key={index} >
+                            <View style={styles.item} key={index} >
+                                    
                                     <View>
 
                                         <Text onPress={(e)=> navigate("/verse/"+ id.id +"/"+ index)} style={styles.card}>{index+1}</Text>
