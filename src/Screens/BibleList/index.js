@@ -20,7 +20,7 @@ const BibleList = () =>{
     return(
         <View style={styles.fixedView}>       
           
-            <ScrollView style={styles.view}>
+            <ScrollView style={styles.view} showsVerticalScrollIndicator={false}>
 
               {/*<FlatList
                 data={list}
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     height:"100%"
   },
   blankSpace:{
-    padding:50,
+    padding:150,
   }
   
 })

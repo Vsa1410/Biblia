@@ -20,11 +20,11 @@ const Chapter = () =>{
       
     return(
         <View>
-            <ScrollView>
                 <View style={styles.titleView}>
                     <IconButton onPress={()=> navigate(-1)} icon={props =>  <Icon name="chevron-left" {...props} />}/>
                     <Text style={styles.title}>{data[id.id].name}</Text>
                 </View>
+            <ScrollView showsVerticalScrollIndicator={false} >
 
                 
                 <View style={styles.view}>
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
         
     },
     version:{
-        paddingBottom:200,
+        paddingBottom:250,
     },
     title:{
         fontSize:30,

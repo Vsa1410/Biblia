@@ -17,7 +17,7 @@ const MainHeader = (props) =>{
     return(
         <LinearGradient
         // Button Linear Gradient
-            colors={['rgba(47,62,70,1)', '#6b8a72']}
+            colors={['#6b8a72','rgba(47,62,70,1)']}
             style={styles.button}>
             <View style={styles.header}>
             
