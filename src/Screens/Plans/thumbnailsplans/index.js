@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-native";
 
 
 
-const Thumbnail = () =>{
+const ThumbnailPlans = () =>{
     const navigate = useNavigate()
     const [thumbnailData, setThumbnailData] = useState()
     
@@ -17,7 +17,7 @@ const Thumbnail = () =>{
         
        try{
 
-           const jsonValue = await AsyncStorage.getItem('@localDataDevotionals')
+           const jsonValue = await AsyncStorage.getItem('@localDataPlans')
            
            return jsonValue != null ? setThumbnailData(JSON.parse(jsonValue)) : null;           
           
@@ -41,9 +41,9 @@ const Thumbnail = () =>{
                     return(
 
                         <LinearGradient
-                        colors={['#004707', '#839d76']}
+                        colors={['#cb8012', '#ffc11b']}
                         style={styles.item}>
-                            <Pressable onPress={()=>navigate('/webviewDevotionals/'+index)}>
+                            <Pressable onPress={()=>navigate('/webview/'+index)}>
                                 <View key={index} style={styles.item} >
                                 
                                     <Text style={styles.text}>{item.title}</Text>
@@ -85,4 +85,4 @@ const styles = StyleSheet.create({
         
     }
 })
-export default Thumbnail;
+export default ThumbnailPlans;

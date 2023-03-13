@@ -7,6 +7,7 @@ import Home from './src/Screens/Home';
 import Verses from './src/Screens/Verse';
 import MainHeader from './src/Components/MainHeader';
 import WebViews from './src/Components/WebViewPlans/index'
+import WebViewsDevotionals from './src/Components/WebViewDevotionals';
 
 import * as Device from 'expo-device'
 import Push from './src/Firebase/config';
@@ -21,7 +22,7 @@ import * as Permissions from 'expo-permissions';
 import * as Notifications from 'expo-notifications'
 import { useEffect, useState, useRef } from 'react';
 import { Link, useNavigate } from "react-router-native";
-import { sendExpoToken, getPlansData } from './serverConnections/routes';
+import { sendExpoToken, getPlansData, getDevotionalsData } from './serverConnections/routes';
 
 
 
@@ -102,6 +103,7 @@ export default function App() {
 
       //Get Data from Database
       getPlansData()
+      getDevotionalsData()
 
   return (
     <View style={styles.container}>
@@ -125,6 +127,7 @@ export default function App() {
             <Route path='/push/' element={<PushNotifications/>}/>
 
             <Route path='/webview/:plans' element={<WebViews/>}/>
+            <Route path='/webviewDevotionals/:plans' element={<WebViewsDevotionals/>}/>
             
             
 

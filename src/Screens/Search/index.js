@@ -1,4 +1,4 @@
-import {Text, ScrollView, View, StyleSheet, Item, FlatList} from 'react-native'
+import {Text, ScrollView, View, StyleSheet, Item, FlatList, Pressable} from 'react-native'
 import { TextInput,IconButton, Button, } from '@react-native-material/core'
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { useEffect, useState } from 'react';
@@ -104,14 +104,16 @@ const Search = ()=>{
                 
                 {completeResults.map((item, index) => {
                     return (
-                        <View style={styles.item} key={index}>
-                            <Card 
-                            text={item.verse.substring(0, 80)}
-                            reference={`${data[item.livro].name} ${(item.capitulo+1)}:${item.versiculo+1}`}
-                               
-                               />
-                            <IconButton style={styles.icon} onPress={()=> navigate(`/verse/${(item.livro)}/${item.capitulo}`)} icon={  <Icon color={"#cad2c5"}  name="chevron-right" size={35} />}/>
-                        </View>
+                        <Pressable onPress={()=> navigate(`/verse/${(item.livro)}/${item.capitulo}`)}>
+                            <View style={styles.item} key={index}>
+                                <Card 
+                                text={item.verse.substring(0, 80)}
+                                reference={`${data[item.livro].name} ${(item.capitulo+1)}:${item.versiculo+1}`}
+                                
+                                />
+                                
+                            </View>
+                        </Pressable>
                     )
                 })}
             </ScrollView>

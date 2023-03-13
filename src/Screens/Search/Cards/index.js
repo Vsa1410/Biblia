@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         paddingLeft:10,
         paddingRight:10,
-        width:"90%"
+        minWidth:"100%"
     }
 })
 export default Card

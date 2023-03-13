@@ -1,5 +1,5 @@
 import { IconButton } from "@react-native-material/core";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Pressable } from "react-native";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { useNavigate } from "react-router-native";
 
@@ -9,27 +9,44 @@ export default MainBottom = () =>{
 
     return(
         <View style={styles.container}>
-            <View  style={styles.item}>
-               <IconButton onPress={()=> navigate('/')} icon={  <Icon color={"#cad2c5"} style={styles.icon} name="home" size={30} />}/>
-                <Text style={styles.text}>Inicio</Text>
-            </View>
-            <View style={styles.item}>
-                <IconButton onPress={()=> navigate('/search')} icon={  <Icon color={"#cad2c5"} style={styles.icon} name="magnify" size={30} />}/>
-                <Text style={styles.text}>Buscar</Text>
-            </View>
-            
-            <View style={styles.item}>    
-                <IconButton onPress={()=> navigate('/read')} icon={  <Icon color={"#cad2c5"} style={styles.icon} name="book" size={30} />}/>
-                <Text style={styles.text}>Bíblia</Text>
-            </View>
-            <View style={styles.item}>
-                <IconButton onPress={()=> navigate('/plans')} icon={  <Icon color={"#cad2c5"} style={styles.icon} name="note-outline" size={30} />}/>
-                <Text style={styles.text}>Planos</Text>
-            </View>
-            <View style={styles.item}>
-                <IconButton onPress={()=> navigate('/favorites')} icon={  <Icon color={"#cad2c5"} style={styles.icon} name="heart-outline" size={30} />}/>
-                <Text style={styles.text}>Favoritos</Text>
-            </View>
+            <Pressable onPress={()=> navigate('/')}>
+                <View  style={styles.item}>
+                        <Icon color={"#cad2c5"} style={styles.icon} name="home" size={30} />
+                
+                    <Text style={styles.text}>Inicio</Text>
+                </View>
+            </Pressable>
+
+            <Pressable onPress={()=> navigate('/search')}>
+
+                <View style={styles.item}>
+                    <Icon color={"#cad2c5"} style={styles.icon} name="magnify" size={30} />
+                    <Text style={styles.text}>Buscar</Text>
+                </View>
+            </Pressable>
+
+            <Pressable onPress={()=> navigate('/read')}>
+                <View style={styles.item}>    
+                    <Icon color={"#cad2c5"} style={styles.icon} name="book" size={30} />
+                    <Text style={styles.text}>Bíblia</Text>
+                </View>
+            </Pressable>
+
+            <Pressable onPress={()=> navigate('/plans')}>
+
+                <View style={styles.item}>
+                   <Icon color={"#cad2c5"} style={styles.icon} name="note-outline" size={30} />
+                    <Text style={styles.text}>Planos</Text>
+                </View>
+            </Pressable>
+
+            <Pressable onPress={()=> navigate('/favorites')}>
+
+                <View style={styles.item}>
+                    <Icon color={"#cad2c5"} style={styles.icon} name="heart-outline" size={30} />
+                    <Text style={styles.text}>Favoritos</Text>
+                </View>
+            </Pressable>
         </View>
     )
 }

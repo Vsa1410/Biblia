@@ -5,7 +5,7 @@ import { useParams } from "react-router-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
-const WebViews = () =>{
+const WebViewsDevotionals = () =>{
     const param = useParams()
     const [response, setResponse] = useState()
     const[isLoading, setIsLoading] = useState(true)
@@ -16,7 +16,7 @@ const WebViews = () =>{
         
        try{
 
-           const jsonValue = await AsyncStorage.getItem('@localDataPlans')
+           const jsonValue = await AsyncStorage.getItem('@localDataDevotionals')
            setResponse(JSON.parse(jsonValue))
            setIsLoading(false)
            
@@ -102,4 +102,4 @@ const styles = StyleSheet.create({
         
     }
 })
-export default WebViews
+export default WebViewsDevotionals
