@@ -20,7 +20,7 @@ function Plans(){
             <Divider/>
             
             <View style={styles.titleView}>
-                <Text style={styles.subtitle}>Mensagens</Text>
+                <Text style={styles.subtitle}>Planos de Leitura</Text>
                 <Text style={styles.button}>Ver Todos</Text>
             </View>
 

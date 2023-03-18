@@ -8,6 +8,7 @@ import Verses from './src/Screens/Verse';
 import MainHeader from './src/Components/MainHeader';
 import WebViews from './src/Components/WebViewPlans/index'
 import WebViewsDevotionals from './src/Components/WebViewDevotionals';
+import Favorites from './src/Screens/UserFavorites';
 
 import * as Device from 'expo-device'
 import Push from './src/Firebase/config';
@@ -16,14 +17,15 @@ import MainBottom from './src/Components/MainBottomMenu';
 import BibleList from './src/Screens/BibleList';
 import Search from './src/Screens/Search';
 import Plans from './src/Screens/Plans';
-import UserFavorites from './src/Screens/Favorites';
+import Authenticate from './src/Screens/Favorites';
 import * as Permissions from 'expo-permissions';
-
+import Register from './src/Screens/Register';
+import UserIndex from './src/Screens/UserIndex';
 import * as Notifications from 'expo-notifications'
 import { useEffect, useState, useRef } from 'react';
 import { Link, useNavigate } from "react-router-native";
 import { sendExpoToken, getPlansData, getDevotionalsData } from './serverConnections/routes';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
@@ -33,6 +35,8 @@ import { sendExpoToken, getPlansData, getDevotionalsData } from './serverConnect
 export default function App() {
   
   //const navigate = useNavigate()
+
+
   
   Notifications.setNotificationHandler({
       handleNotification: async ()=>({
@@ -95,6 +99,7 @@ export default function App() {
                    
           if(token){
             sendExpoToken(token)
+            
           }
         }
         registerForPushNotificationsAsync()
@@ -116,7 +121,7 @@ export default function App() {
             <Route exact path={'/'} element={<Home/>}/>
             <Route path={'/search'} element={<Search/>}/>
             <Route path={'/plans'} element={<Plans/>}/>
-            <Route path={'/favorites'} element={<UserFavorites/>}/>
+            <Route path={'/login'} element={<Authenticate/>}/>
 
             //Bible
             <Route path='/read' element={<BibleList/>}/>
@@ -125,9 +130,14 @@ export default function App() {
 
             //notifications
             <Route path='/push/' element={<PushNotifications/>}/>
-
             <Route path='/webview/:plans' element={<WebViews/>}/>
             <Route path='/webviewDevotionals/:plans' element={<WebViewsDevotionals/>}/>
+
+
+            //Users
+            <Route path='/register' element={<Register/>}/>
+            <Route path='/userindex' element={<UserIndex/>}/>
+            <Route path='/favoriteTexts/:userId' element={<Favorites/>}/>
             
             
 

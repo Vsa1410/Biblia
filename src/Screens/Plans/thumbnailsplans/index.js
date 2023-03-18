@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-native";
 const ThumbnailPlans = () =>{
     const navigate = useNavigate()
     const [thumbnailData, setThumbnailData] = useState()
+
+    //This is a component that shows the thumbnails from the plans of lecture of the Bible
     
     async function getLocalData(){
         
@@ -34,7 +36,7 @@ const ThumbnailPlans = () =>{
     },[])
         
         return(
-            <ScrollView style={styles.container} horizontal={true}>
+            <ScrollView style={styles.container} horizontal={true} showsHorizontalScrollIndicator={false}>
             
                 {thumbnailData ?
                 thumbnailData.map((item, index)=>{
@@ -62,7 +64,8 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: 200,
-        marginLeft:15
+        marginLeft:15,
+        
         
         
         
@@ -80,8 +83,10 @@ const styles = StyleSheet.create({
         height:150,
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft:15,
+        paddingLeft:10,
+        paddingRight:10,
         borderRadius:15,
+        marginRight:10,
         
     }
 })

@@ -7,6 +7,7 @@ import CarrousselPlans from "../../Components/Carroussel Plans";
 
 import axios from "axios";
 import Thumbnail from "../Plans/thumbnails";
+import VerseOfDay from "../../Components/VerseOfDay";
 
 
 
@@ -18,11 +19,7 @@ export default function Home() {
     return(
         <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
            
-            <View style={styles.plans}>
-                <Text style={styles.subtitle}>Versículo do dia</Text>
-                <Text style={styles.verse}>O SENHOR é o meu pastor, nada me faltará.</Text>
-                <Text style={styles.verseReference}>Salmos 23:1</Text>
-            </View>
+            <VerseOfDay/>
             
             <Divider/>
 

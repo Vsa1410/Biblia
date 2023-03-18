@@ -2,13 +2,36 @@ import { useParams } from "react-router-native";
 import{ Text, StyleSheet, ScrollView, View, Vibration, Animated } from "react-native"
 import {Alert, Share, Button} from 'react-native';
 import Header from "../../Components/Header/index"
-import { useRef, useState } from "react";
-import { Stack, IconButton } from "@react-native-material/core";
+import { useRef, useState, useEffect } from "react";
+import { Stack, IconButton, select } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-
+import axios from "axios";
+import { baseUrl, handleFavoriteVerses } from "../../../serverConnections/routes";
 const data = require("../../../assets/database/aa.json")
+import jwtDecode from "jwt-decode";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 const Verses = () => {
+
+    const [decodedToken, setDecodedToken]= useState('')
+    async function getLocalToken(){
+        const token = await AsyncStorage.getItem('jwtoken')
+        const decode = await jwtDecode(token)
+        if(token){
+            setDecodedToken(decode.userId)
+            console.log(decode.userId)
+            
+        }
+
+    }
+
+    useEffect(()=>{
+        getLocalToken()
+        
+    },[setDecodedToken])
+
+
     //Get the passed params from another page to find the verse
     const id = useParams()
 
@@ -21,6 +44,8 @@ const Verses = () => {
     const [chapter, setChapter] = useState('')
 
     const[isSelected, setSelected] = useState("")
+    
+    
    
 
     //Function to Show options menu, the text, book chapter and verse were passed to function when press the button
@@ -28,6 +53,7 @@ const Verses = () => {
     function handleLongVersePress( text, book, chapter, verse){
         setIsShow(true)
         setSelected(verse - 1)
+        
         setTextToShare(text)
         
 
@@ -45,6 +71,16 @@ const Verses = () => {
         setChapter("")
         setSelected("")
         
+    }
+
+    async function handleFavoriteVerses (){
+        axios.post(baseUrl.favorites,{
+            text: textToShare,
+            book:   Number(id.chapter),
+            chapter: Number(id.verses),
+            verse: isSelected,
+            authorId:decodedToken,
+        })
     }
 
 
@@ -75,6 +111,7 @@ const Verses = () => {
 
                         <View style={styles.optionsIcon}>
                             <IconButton style={styles.optionsIconButton} onPress={onShare} icon={props => <Icon name="share-outline" {...props} color={"#cad2c5"} size={40} />} />
+                            <IconButton style={styles.optionsIconButton} onPress={handleFavoriteVerses} icon={props =>  <Icon name="heart" {...props} size={30}/>}/>
                             <IconButton style={styles.optionsIconButton} onPress={handleLongPressClose} icon={props =>  <Icon name="close-circle" {...props} size={30}/>}/>
                         </View>
                 </View>

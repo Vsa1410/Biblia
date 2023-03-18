@@ -1,14 +1,18 @@
 import axios from "axios";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import jwtDecode from "jwt-decode";
 
 
 
 export const baseUrl = {
-    user: "http://192.168.2.104:3000/users",
-    generalUsers: 'http://192.168.2.104:3000/generalUsers',
-    tokens: 'http://192.168.2.104:3000/tokens',
-    devotionals: 'http://192.168.2.104:3000/devotionals',
-    plans: 'http://192.168.2.104:3000/plans',
+    user: "https://bibliabackend.onrender.com/users",
+    generalUsers: 'https://bibliabackend.onrender.com/generaluser/',
+    tokens: 'https://bibliabackend.onrender.com/tokens',
+    devotionals: 'https://bibliabackend.onrender.com/devotionals',
+    plans: 'https://bibliabackend.onrender.com/plans',
+    login: 'https://bibliabackend.onrender.com/login',
+    favorites:'https://bibliabackend.onrender.com/favorites/',
+    verseOfDay: 'https://bibliabackend.onrender.com/verseofday/'
 }
 
 export async function sendExpoToken(token){
@@ -52,6 +56,17 @@ export async function getDevotionalsData(){
           })
 }
     
+export async function getLocalToken(){
+    const token = await AsyncStorage.getItem('jwtoken')
+    const decode = await jwtDecode(token)
+    if(token){    
+        console.log(decode.userId)
+        return decode.userId
+        
+    }
+
+}
+
     
             
                     

@@ -34,7 +34,7 @@ const Thumbnail = () =>{
     },[])
         
         return(
-            <ScrollView style={styles.container} horizontal={true}>
+            <ScrollView style={styles.container} horizontal={true} showsHorizontalScrollIndicator={false} >
             
                 {thumbnailData ?
                 thumbnailData.map((item, index)=>{
@@ -80,8 +80,10 @@ const styles = StyleSheet.create({
         height:150,
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft:15,
+        marginLeft:10,
+        marginRight:10,
         borderRadius:15,
+        padding:10
         
     }
 })
