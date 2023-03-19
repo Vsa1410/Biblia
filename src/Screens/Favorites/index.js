@@ -1,5 +1,5 @@
 import { TextInput, Button, Divider } from "@react-native-material/core"
-import { ScrollView, Text, StyleSheet, View } from "react-native"
+import { ScrollView, Text, StyleSheet, View, ActivityIndicator } from "react-native"
 import {useState, useEffect} from 'react'
 import { useNavigate } from "react-router-native"
 import AsyncStorage from "@react-native-async-storage/async-storage"
@@ -13,6 +13,7 @@ const Authenticate = () =>{
 
     const navigate = useNavigate()
 
+    const [isLoading, setLoading] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [token, setToken] = useState('')
@@ -35,21 +36,25 @@ const Authenticate = () =>{
 
 
     async function getToken(){
-
+        setLoading(true)
         axios.post(baseUrl.login,{
             email:email,
             password:password
         })
         .then(res =>{
-            console.log(res.data.token)
             setToken(res.data.token)
             AsyncStorage.setItem('jwtoken', res.data.token)
                 .then(()=>console.log("TokenSalvo"))
             
+            setLoading(false)
             
-            navigate('/userindex')
+            setTimeout(() => {
+                
+                navigate('/userindex')
+              }, 2000);
 
         })
+        
 
 
     }
@@ -73,7 +78,7 @@ const Authenticate = () =>{
                 
     
                 <TextInput
-                    label="Email"
+                    
                     placeholder="Email"
                     inputMode="text"
                     style={styles.input}
@@ -85,9 +90,10 @@ const Authenticate = () =>{
     
                 <TextInput
                     secureTextEntry={true}
-                    label="Senha"
+                    
                     placeholder="Senha"
                     style={styles.input}
+                    autoCapitalize="none"
                     onChangeText={(text)=>{setPassword(text)}}
                 
                 />
@@ -96,8 +102,13 @@ const Authenticate = () =>{
                     color="#58884c"
                     tintColor="white"
                     style={styles.button}
+                    loading={isLoading}
                     onPress={(e)=>{getToken()}}
                     />
+                {isLoading&&    
+                <ActivityIndicator
+                    size={"large"}
+                    />}
                 
                 <Divider/>
                 
@@ -108,7 +119,11 @@ const Authenticate = () =>{
                     color="#465ac6"
                     tintColor="white"
                     style={styles.button}
-                    onPress={(e)=>{navigate('/register')}}
+                    onPress={(e)=>
+                        setTimeout(() => {
+                            
+                            navigate('/register')
+                          }, 1000)}
                     />
     
     

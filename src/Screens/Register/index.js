@@ -5,6 +5,7 @@ import { baseUrl } from "../../../serverConnections/routes";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Notifications from 'expo-notifications'
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 
@@ -17,27 +18,30 @@ const Register = () =>{
     const [name, setName]=useState('');
     const [email, setEmail]=useState('');
     const [password, setPassword]=useState('');
+    const [token, setToken] = useState('')
+
+   
+   
 
     async function storeUserData(){
-        const token = ((await Notifications.getExpoPushTokenAsync()).data);
-        console.log(token)
-
-
-
-
-        axios.post(baseUrl.generalUsers,{
-            name:name,
-            email:email.toLocaleLowerCase,
-            password:password,
-            token:token
-        })
+            setLoading(true)
+            console.log(name+email+password)
+            
+            axios.post(baseUrl.generalUsers,{
+                name:name,
+                email:email,
+                password:password,
+                })
         .then(
             (response)=>{
                 console.log(response);
-                setLoading(false)
+                console.log(password)
                 navigate('/login')
             }
         )
+        .catch((res)=>{
+            console.log(res)
+        })
     }
     return(
         <ScrollView style={styles.container}>
@@ -45,19 +49,22 @@ const Register = () =>{
 
             <TextInput style={styles.input} 
                 placeholder="Nome"
-                onChange={(e)=>{setName(e)}}
+                onChangeText={e=>setName(e)}
+                
                 />
             <TextInput style={styles.input} 
                 placeholder="Email" 
                 textContentType="emailAddress"
                 autoCapitalize="none"
-                onChange={(e)=>{setEmail(e)}}
+                onChangeText={e=>setEmail(e)}
+                
                 />
             <TextInput style={styles.input} 
                 placeholder="Senha" 
                 textContentType="newPassword" 
                 secureTextEntry={true}
-                onChange={(e)=>{setPassword(e)}}
+                onChangeText={e=>setPassword(e)}
+                
                 
                 />
             <View style={styles.buttons}>
@@ -72,7 +79,8 @@ const Register = () =>{
                 <Button
                     title={"Cadastrar"}
                     color="#0f5e3d"
-                    onPress={storeUserData()}
+                    loading={isLoading}
+                    onPress={storeUserData}
 
                     />
             </View>
@@ -92,7 +100,9 @@ const styles = StyleSheet.create({
         borderStyle:'solid',
         borderRadius:12,
         margin:20,
-        width:"70%"
+        width:"70%",
+        alignSelf:"center",
+        
         
     },
     buttons:{

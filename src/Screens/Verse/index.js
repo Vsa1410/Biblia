@@ -3,7 +3,7 @@ import{ Text, StyleSheet, ScrollView, View, Vibration, Animated } from "react-na
 import {Alert, Share, Button} from 'react-native';
 import Header from "../../Components/Header/index"
 import { useRef, useState, useEffect } from "react";
-import { Stack, IconButton, select } from "@react-native-material/core";
+import { Stack, IconButton, select, Snackbar } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import axios from "axios";
 import { baseUrl, handleFavoriteVerses } from "../../../serverConnections/routes";
@@ -45,7 +45,7 @@ const Verses = () => {
 
     const[isSelected, setSelected] = useState("")
     
-    
+    const [isSucess, setSucess]=useState(false)
    
 
     //Function to Show options menu, the text, book chapter and verse were passed to function when press the button
@@ -80,6 +80,12 @@ const Verses = () => {
             chapter: Number(id.verses),
             verse: isSelected,
             authorId:decodedToken,
+        })
+        .then(()=>{
+            setSucess(true)
+            setTimeout(()=>{
+                setSucess(false)
+            },3000)
         })
     }
 
@@ -120,7 +126,7 @@ const Verses = () => {
                 <IconButton onPress={()=> navigate(-1)} icon={props =>  <Icon name="chevron-left" {...props} />}/>
                 <Text style={styles.title}>{data[id.chapter].name}  {Number(id.verses) + 1}</Text>
             </View>
-            <ScrollView /*onScroll={isShow?  handleLongPressClose: ""}*/>
+            <ScrollView >
 
                     <ScrollView style={styles.view}>
 
@@ -133,6 +139,11 @@ const Verses = () => {
                         })}
                     </ScrollView>
             </ScrollView>
+            {isSucess&& <Snackbar
+                            message="Adicionado aos Favoritos"
+                            style={styles.snackbar}
+                            color="error"
+                            />}
         </View>
     )
 }
@@ -203,6 +214,13 @@ const styles = StyleSheet.create({
         
         
 
+    },
+    snackbar:{
+        position:"absolute",
+        width:"30%",
+        bottom:400,
+        alignSelf:"center"
+        
     }
 })
 export default Verses

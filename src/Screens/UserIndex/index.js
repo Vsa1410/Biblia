@@ -15,6 +15,8 @@ const UserIndex = () =>{
     const [userData, setUserData]= useState()
     const [decodedToken, setDecodedToken]= useState('')
 
+    const [isLoading, setLoading] = useState(true)
+
     const navigate = useNavigate()
 
     async function getLocalToken(){
@@ -28,6 +30,7 @@ const UserIndex = () =>{
     }
 
     useEffect(()=>{
+        setLoading(true)
         getLocalToken()
         
     },[setDecodedToken])
@@ -61,6 +64,7 @@ const UserIndex = () =>{
             const jsonValue = await AsyncStorage.getItem("@userData")
             if(jsonValue){
                 const response = await JSON.parse(jsonValue);
+                setLoading(false)
                 setUserData(response)
                 console.log(response)
         }
@@ -78,6 +82,7 @@ const UserIndex = () =>{
 
     if(!userData){
         <View>
+
             {getLocalData()}
             <ActivityIndicator/>
         </View>
@@ -85,6 +90,7 @@ const UserIndex = () =>{
 
         return(
             <View style={styles.container}>
+                
 
                 <Text style={styles.subtitle}>Olá, {userData.name}</Text>
                 <ScrollView style={styles.list}>
@@ -93,15 +99,22 @@ const UserIndex = () =>{
                     <ListItem style={styles.item} title="Versículo do dia"/>
                     
                 </ScrollView>
+                {isLoading&&<ActivityIndicator/>}
                 <Button
                 title="LogOut"
                 color="error"
                 variant="outLined"
+                loading={isLoading}
                 style={styles.button}
                 onPress={()=>{
+                    setLoading(true)
+                    {isLoading&&<ActivityIndicator/>}
                     AsyncStorage.removeItem('jwtoken')
                     AsyncStorage.removeItem('@userData')
-                    navigate('/userindex')
+                    setTimeout(() => {
+                        setLoading(false)
+                        navigate('/login')
+                    }, 3000);
                 }}
                 />
                 

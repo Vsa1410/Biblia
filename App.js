@@ -36,7 +36,12 @@ export default function App() {
   
   //const navigate = useNavigate()
 
+  async function setItemToken(token){
 
+      
+      AsyncStorage.setItem('@token', token)
+
+  }
   
   Notifications.setNotificationHandler({
       handleNotification: async ()=>({
@@ -94,10 +99,12 @@ export default function App() {
           if (status !== 'granted') {
             return;
           }
-          const token = ((await Notifications.getExpoPushTokenAsync()).data);
+          const token = (await Notifications.getExpoPushTokenAsync()).data;
           console.log(token);
                    
           if(token){
+            console.log(token)
+            setItemToken(token)
             sendExpoToken(token)
             
           }
