@@ -11,7 +11,8 @@ import { useNavigate } from "react-router-dom"
 
 
 
-const UserIndex = () =>{
+function UserIndex(){
+    
     const [userData, setUserData]= useState()
     const [decodedToken, setDecodedToken]= useState('')
 
@@ -19,21 +20,26 @@ const UserIndex = () =>{
 
     const navigate = useNavigate()
 
+
+    useEffect(()=>{
+        
+        getLocalToken()
+        
+    },[setDecodedToken])
+
     async function getLocalToken(){
         const token = await AsyncStorage.getItem('jwtoken')
-        const decode = await jwtDecode(token)
+        console.log('token')
+        
         if(token){
+           
+            const decode = await jwtDecode(token)
             setDecodedToken(decode.userId)
             getUserData(decode.userId)
         }
 
     }
 
-    useEffect(()=>{
-        setLoading(true)
-        getLocalToken()
-        
-    },[setDecodedToken])
 
 
 
@@ -43,6 +49,7 @@ const UserIndex = () =>{
         axios.get (baseUrl.generalUsers+token)
         .then(response => {
             storeLocalData(response.data)
+            setUserData(response.data)
             
         
         })          
@@ -54,19 +61,24 @@ const UserIndex = () =>{
 
             const jsonValue = JSON.stringify(response)
             AsyncStorage.setItem("@userData", jsonValue)
+            getLocalData()
             
         }catch{
             console.log("Erro ao salvar no local storage")
         }
     }
+
     async function getLocalData(){
         try{
             const jsonValue = await AsyncStorage.getItem("@userData")
             if(jsonValue){
                 const response = await JSON.parse(jsonValue);
-                setLoading(false)
-                setUserData(response)
                 console.log(response)
+                
+                setLoading(false)
+
+                setUserData(response)
+                
         }
         }catch{
 
@@ -81,25 +93,30 @@ const UserIndex = () =>{
     if it's different, change the data on AsyncStorage*/
 
     if(!userData){
-        <View>
+        return(
 
-            {getLocalData()}
-            <ActivityIndicator/>
-        </View>
-    }else{
+            <View style={styles.container}>
+
+                
+                <ActivityIndicator/>
+                
+            </View>
+        )
+    }else if(userData){
 
         return(
             <View style={styles.container}>
                 
 
-                <Text style={styles.subtitle}>Olá, {userData.name}</Text>
+               <Text style={styles.subtitle}>Olá, {userData.name}</Text>
                 <ScrollView style={styles.list}>
                     <ListItem style={styles.item} title="Minha Conta"/>
                     <ListItem style={styles.item} title="Textos Favoritos" onPress={()=> navigate('/favoriteTexts/'+decodedToken)}/>
                     <ListItem style={styles.item} title="Versículo do dia"/>
                     
                 </ScrollView>
-                {isLoading&&<ActivityIndicator/>}
+                {/*isLoading&&<ActivityIndicator/>*/}
+
                 <Button
                 title="LogOut"
                 color="error"
@@ -108,15 +125,15 @@ const UserIndex = () =>{
                 style={styles.button}
                 onPress={()=>{
                     setLoading(true)
-                    {isLoading&&<ActivityIndicator/>}
+                    {/*isLoading&&<ActivityIndicator/>*/}
                     AsyncStorage.removeItem('jwtoken')
                     AsyncStorage.removeItem('@userData')
                     setTimeout(() => {
                         setLoading(false)
                         navigate('/login')
-                    }, 3000);
+                    }, 2000);
                 }}
-                />
+            />
                 
             </View>
             )

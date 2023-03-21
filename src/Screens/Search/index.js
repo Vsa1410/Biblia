@@ -1,4 +1,4 @@
-import {Text, ScrollView, View, StyleSheet, Item, FlatList, Pressable} from 'react-native'
+import {Text, ScrollView, View, StyleSheet, Item, FlatList, Pressable, Keyboard} from 'react-native'
 import { TextInput,IconButton, Button, } from '@react-native-material/core'
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { useEffect, useState } from 'react';
@@ -15,7 +15,7 @@ const Search = ()=>{
     
     const [searchText , setSearchText] = useState('');
     const [completeResults, setCompleteResults] = useState([]);
-    const [loading, setLoading] = useState()
+    const [loading, setLoading] = useState(false)
 
         
     var livro  = '';
@@ -83,24 +83,33 @@ const Search = ()=>{
                 onChangeText={newText => setSearchText(newText)}
                 style={styles.search}
                 color='black'
+                onSubmitEditing={()=> setLoading(true)}
+                
                 
                 />
             <Button 
                               
-                onPress= {()=> setLoading(true)}
+                onPress= {()=> {
+                    Keyboard.dismiss()
+                    setTimeout(() => {
+                        setLoading(true)
+                        
+                    }, 2000);
+                }}
                 title='Buscar'
                 style={styles.button}
                 color='black'
+                loading={loading}
                   
                 /> 
                       
                 
             
+            <ScrollView style={styles.results}>
             {loading&&
 
-                <ActivityIndicator />
+                <Text>Carregando resultados...</Text>
                 }
-            <ScrollView style={styles.results}>
                 
                 {completeResults.map((item, index) => {
                     return (

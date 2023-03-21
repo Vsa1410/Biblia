@@ -1,5 +1,5 @@
 import { useParams } from "react-router-native";
-import{ Text, StyleSheet, ScrollView, View, Vibration, Animated } from "react-native"
+import{ Text, StyleSheet, ScrollView, View, Vibration } from "react-native"
 import {Alert, Share, Button} from 'react-native';
 import Header from "../../Components/Header/index"
 import { useRef, useState, useEffect } from "react";
@@ -10,9 +10,13 @@ import { baseUrl, handleFavoriteVerses } from "../../../serverConnections/routes
 const data = require("../../../assets/database/aa.json")
 import jwtDecode from "jwt-decode";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Animated } from "react-native";
 
 
 const Verses = () => {
+
+    
+
 
     const [decodedToken, setDecodedToken]= useState('')
     async function getLocalToken(){
@@ -113,7 +117,19 @@ const Verses = () => {
     return(
         <View>
             {isShow && (
-                <View style={styles.options}>
+                
+                <View style={[
+                    {
+
+                        height:60,
+                        backgroundColor:"#52796f",
+                        transition: "1.2s",
+                        justifyContent:'space-around',
+                        alignItems:"flex-end",
+                        
+                    }
+]}
+                >
 
                         <View style={styles.optionsIcon}>
                             <IconButton style={styles.optionsIconButton} onPress={onShare} icon={props => <Icon name="share-outline" {...props} color={"#cad2c5"} size={40} />} />
@@ -134,7 +150,8 @@ const Verses = () => {
                             return(
                                 <Text key={index} style={index === isSelected ? styles.textSelected:styles.text}
                                 
-                                onLongPress={(e)=> handleLongVersePress(data[id.chapter].chapters[id.verses][index], data[id.chapter].name, Number(id.verses) + 1, index + 1 )}>{(index + 1) + "  " + text}</Text>
+                                onLongPress={(e)=>
+                                    handleLongVersePress(data[id.chapter].chapters[id.verses][index], data[id.chapter].name, Number(id.verses) + 1, index + 1 )}>{(index + 1) + "  " + text}</Text>
                             )
                         })}
                     </ScrollView>
@@ -179,17 +196,7 @@ const styles = StyleSheet.create({
         marginBottom:10,
         paddingTop:2,       
     },
-    options:{
-        height:60,
-        backgroundColor:"#52796f",
-        transition: "1.2s",
-        justifyContent:'space-around',
-        alignItems:"flex-end"
-        
-        
-        
-
-    },
+    
     optionsIcon:{
         display: "flex",
         flexDirection: "row",

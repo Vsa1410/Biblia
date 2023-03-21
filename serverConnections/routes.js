@@ -5,14 +5,14 @@ import jwtDecode from "jwt-decode";
 
 
 export const baseUrl = {
-    user: "https://bibliabackend.onrender.com/users",
-    generalUsers: 'https://bibliabackend.onrender.com/generaluser/',
-    tokens: 'https://bibliabackend.onrender.com/tokens',
-    devotionals: 'https://bibliabackend.onrender.com/devotionals',
-    plans: 'https://bibliabackend.onrender.com/plans',
-    login: 'https://bibliabackend.onrender.com/login',
-    favorites:'https://bibliabackend.onrender.com/favorites/',
-    verseOfDay: 'https://bibliabackend.onrender.com/verseofday/'
+    user: "http://192.168.0.116:3001/users",
+    generalUsers: 'http://192.168.0.116:3001/generaluser/',
+    tokens: 'http://192.168.0.116:3001/tokens',
+    devotionals: 'http://192.168.0.116:3001/devotionals',
+    plans: 'http://192.168.0.116:3001/plans',
+    login: 'http://192.168.0.116:3001/login',
+    favorites:'http://192.168.0.116:3001/favorites/',
+    verseOfDay: 'http://192.168.0.116:3001/verseofday/'
 }
 
 export async function sendExpoToken(token){

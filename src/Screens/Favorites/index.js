@@ -6,28 +6,34 @@ import AsyncStorage from "@react-native-async-storage/async-storage"
 import axios from "axios"
 import { baseUrl } from "../../../serverConnections/routes"
 import jwtDecode from 'jwt-decode';
+import UserIndex from "../UserIndex"
+import Register from "../Register"
 
 
 
 const Authenticate = () =>{
 
     const navigate = useNavigate()
-
+    const [loginError, setLoginError]= useState(false)
     const [isLoading, setLoading] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [token, setToken] = useState('')
+    const [fill, setFill] = useState(false)
 
     async function getLocalToken(){
         const token = await AsyncStorage.getItem('jwtoken')
-        console.log(token)
-        setToken(token)
-        
-        const tokenjwt= token;
+        if(token){
 
-        const decoded = jwtDecode(tokenjwt);
+            console.log(token)
+            setToken(token)
             
-        console.log(decoded);
+            const tokenjwt= token;
+    
+            const decoded = jwtDecode(tokenjwt);
+                
+            console.log(decoded);
+        }
     }
 
     useEffect(()=>{
@@ -36,25 +42,43 @@ const Authenticate = () =>{
 
 
     async function getToken(){
-        setLoading(true)
-        axios.post(baseUrl.login,{
-            email:email,
-            password:password
-        })
-        .then(res =>{
+        if (email && password){
+
+            setLoading(true)
+            axios.post(baseUrl.login,{
+                email:email,
+                password:password
+            })
+            .then(res =>{
+            console.log(res)
             setToken(res.data.token)
+            
             AsyncStorage.setItem('jwtoken', res.data.token)
                 .then(()=>console.log("TokenSalvo"))
             
-            setLoading(false)
-            
-            setTimeout(() => {
+                setLoading(false)
                 
-                navigate('/userindex')
-              }, 2000);
-
-        })
-        
+                setTimeout(() => {
+                    
+                    navigate('/userindex')
+                }, 2000);
+                
+            })
+            .catch(err=>{
+                setLoading(false)
+                setLoginError(true)
+                setTimeout(()=>{
+                    setLoginError(false)
+                }, 3500)
+                console.log(err)
+            })
+        }else{
+            setFill(true)
+            setTimeout(()=>{
+                setFill(false)
+            },3500)
+        }
+            
 
 
     }
@@ -64,8 +88,8 @@ const Authenticate = () =>{
 
     if(token){
         return(
-            navigate('/userindex')
 
+            <UserIndex/>
         )
     }
     
@@ -97,6 +121,8 @@ const Authenticate = () =>{
                     onChangeText={(text)=>{setPassword(text)}}
                 
                 />
+                {fill&&<Text style={styles.errorText}>Preencha todos os campos!!</Text>}
+                {loginError&&<Text style={styles.errorText}>Senha incorreta!</Text>}
                 <Button
                     title="Entrar"
                     color="#58884c"
@@ -156,6 +182,9 @@ const styles = StyleSheet.create({
         width:"90%",
         maxWidth: 500,
         marginBottom:30,
+    },
+    errorText:{
+        color:"red"
     }
 })
 export default Authenticate
