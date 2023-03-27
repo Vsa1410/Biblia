@@ -14,7 +14,7 @@ function Plans(){
         <ScrollView style={styles.container}>
             <View style={styles.titleView}>
                 <Text style={styles.subtitle}>Devocionais</Text>
-                <Text style={styles.button}>Ver Todos</Text>
+                <Button style={styles.button} title='Ver Todos' variant="text" color="#2b6e20" onPress={() => navigate('/posts/devotionals')} />
             </View>
             
             <Thumbnail/>
@@ -23,7 +23,7 @@ function Plans(){
             
             <View style={styles.titleView}>
                 <Text style={styles.subtitle}>Planos de Leitura</Text>
-                <Text style={styles.button}>Ver Todos</Text>
+                <Button style={styles.button} title='Ver Todos' variant="text" color="#2b6e20" onPress={() => navigate('/posts/plans')} />
             </View>
 
             <ThumbnailPlans/>

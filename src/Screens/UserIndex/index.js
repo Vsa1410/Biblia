@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { createContext, useContext, useEffect } from "react"
 import { Text, StyleSheet, View, ScrollView } from "react-native"
 import { baseUrl } from "../../../serverConnections/routes"
 import { useState } from "react"
@@ -7,19 +7,36 @@ import AsyncStorage from "@react-native-async-storage/async-storage"
 import jwtDecode from 'jwt-decode';
 import { ActivityIndicator, Button, Divider, ListItem } from "@react-native-material/core"
 import { useNavigate } from "react-router-dom"
+import { ApiContext } from "../../Components/Context/ApiContext"
+
+
+
 
 
 
 
 function UserIndex(){
+
+
     
+
     const [userData, setUserData]= useState()
+
     const [decodedToken, setDecodedToken]= useState('')
 
     const [isLoading, setLoading] = useState(true)
 
     const navigate = useNavigate()
 
+    const {data, toggleData, deleteUserData} = useContext(ApiContext)
+   
+    useEffect(()=>{
+        toggleData()
+        if(data){
+            setLoading(false)
+        }
+    }, [data])
+   
 
     useEffect(()=>{
         
@@ -29,7 +46,6 @@ function UserIndex(){
 
     async function getLocalToken(){
         const token = await AsyncStorage.getItem('jwtoken')
-        console.log('token')
         
         if(token){
            
@@ -40,18 +56,12 @@ function UserIndex(){
 
     }
 
-
-
-
-   
-    
     async function getUserData(token) {          
         axios.get (baseUrl.generalUsers+token)
         .then(response => {
             storeLocalData(response.data)
-            setUserData(response.data)
-            
-        
+            setUserData(response.data) 
+                  
         })          
             
     }
@@ -61,30 +71,14 @@ function UserIndex(){
 
             const jsonValue = JSON.stringify(response)
             AsyncStorage.setItem("@userData", jsonValue)
-            getLocalData()
+            
             
         }catch{
             console.log("Erro ao salvar no local storage")
         }
     }
 
-    async function getLocalData(){
-        try{
-            const jsonValue = await AsyncStorage.getItem("@userData")
-            if(jsonValue){
-                const response = await JSON.parse(jsonValue);
-                console.log(response)
-                
-                setLoading(false)
-
-                setUserData(response)
-                
-        }
-        }catch{
-
-            console.log("Erro ao ler no local storage")
-        }
-    }
+   
 
     /*At this component the data comes from the database is stored
     at AsyncStorage and after this the app takes the data from Async
@@ -92,27 +86,20 @@ function UserIndex(){
     app compares the previous data with the new data from AsyncStorage,
     if it's different, change the data on AsyncStorage*/
 
-    if(!userData){
-        return(
-
-            <View style={styles.container}>
-
-                
-                <ActivityIndicator/>
-                
-            </View>
-        )
-    }else if(userData){
+    
 
         return(
             <View style={styles.container}>
+            
                 
-
-               <Text style={styles.subtitle}>Olá, {userData.name}</Text>
+                {data ? <Text style={styles.subtitle}>Olá, {data.name}</Text>: <ActivityIndicator/>}
+               
                 <ScrollView style={styles.list}>
-                    <ListItem style={styles.item} title="Minha Conta"/>
+                    <ListItem style={styles.item} title="Minha Conta" onPress={()=> navigate('/userconfiguration')}/>
                     <ListItem style={styles.item} title="Textos Favoritos" onPress={()=> navigate('/favoriteTexts/'+decodedToken)}/>
                     <ListItem style={styles.item} title="Versículo do dia"/>
+                    <Divider/>
+                    <ListItem style={styles.item} title="Modo de leitura" onPress={()=> navigate('/theme')}/>
                     
                 </ScrollView>
                 {/*isLoading&&<ActivityIndicator/>*/}
@@ -126,11 +113,11 @@ function UserIndex(){
                 onPress={()=>{
                     setLoading(true)
                     {/*isLoading&&<ActivityIndicator/>*/}
-                    AsyncStorage.removeItem('jwtoken')
-                    AsyncStorage.removeItem('@userData')
+                    
+                    deleteUserData()
                     setTimeout(() => {
+                        navigate('/plans')
                         setLoading(false)
-                        navigate('/login')
                     }, 2000);
                 }}
             />
@@ -139,7 +126,7 @@ function UserIndex(){
             )
 
     }
-}
+
 const styles = StyleSheet.create({
     subtitle:{
         fontSize: 20,

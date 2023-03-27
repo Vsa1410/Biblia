@@ -11,28 +11,81 @@ const WebViewsDevotionals = () =>{
     const[isLoading, setIsLoading] = useState(true)
 
     const [thumbnailData, setThumbnailData] = useState()
+
     
-    async function getLocalData(){
-        
-       try{
 
-           const jsonValue = await AsyncStorage.getItem('@localDataDevotionals')
-           setResponse(JSON.parse(jsonValue))
-           setIsLoading(false)
-           
-                     
-          
+        async function getLocalDevotionals(){
+            
+           try{
+    
+               const jsonValue = await AsyncStorage.getItem('@localDatadevotionals')
+               setResponse(JSON.parse(jsonValue))
+               setIsLoading(false)
+               
+                         
+              
+            }
+            catch(err){
+                console.log(err)
+            }
         }
-        catch(err){
-            console.log(err)
-        }
-    }
-    useEffect(() => {
-
-        getLocalData()
+    
+        async function getLocalMessages(){
+            
+            try{
+     
+                const jsonValue = await AsyncStorage.getItem('@localDatamessages')
+                setResponse(JSON.parse(jsonValue))
+                setIsLoading(false)
+                
+                          
+               
+             }
+             catch(err){
+                 console.log(err)
+             }
+         }
+    
+         async function getLocalPlans(){
         
-       
-    },[setResponse])
+            try{
+
+                const jsonValue = await AsyncStorage.getItem('@localDataplans')
+                setResponse(JSON.parse(jsonValue))
+                setIsLoading(false)
+                
+                            
+                
+                }
+                catch(err){
+                    console.log(err)
+                }
+        }
+        if (param.category === "messages"){
+            useEffect(() => {
+
+                getLocalMessages()
+                
+               
+            },[setResponse])
+        }else if(param.category === "plans"){
+            useEffect(() => {
+
+                getLocalPlans()
+                
+               
+            },[setResponse])
+        }else if(param.category === "devotionals"){
+            useEffect(() => {
+
+                getLocalDevotionals()
+                
+               
+            },[setResponse])
+        }
+    
+    
+   
     const css = "<body style=font-size:40px;>"
     
     const cssbottom="</body>"

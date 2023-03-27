@@ -5,6 +5,7 @@ import { View, ScrollView,StyleSheet, Image, Text, ActivityIndicator, Pressable 
 import getPlansData from "../../../../serverConnections/routes"
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigate } from "react-router-native";
+import { Button } from "@react-native-material/core";
 
 
 
@@ -17,7 +18,7 @@ const Thumbnail = () =>{
         
        try{
 
-           const jsonValue = await AsyncStorage.getItem('@localDataDevotionals')
+           const jsonValue = await AsyncStorage.getItem('@localDatadevotionals')
            
            return jsonValue != null ? setThumbnailData(JSON.parse(jsonValue)) : null;           
           
@@ -29,21 +30,22 @@ const Thumbnail = () =>{
     useEffect(() => {
 
         getLocalData()
-        console.log(thumbnailData)
+       
        
     },[])
         
         return(
             <ScrollView style={styles.container} horizontal={true} showsHorizontalScrollIndicator={false} >
+                
             
                 {thumbnailData ?
                 thumbnailData.map((item, index)=>{
                     return(
 
                         <LinearGradient
-                        colors={['#004707', '#839d76']}
+                        colors={['#6c0000', '#454545']}
                         style={styles.item}>
-                            <Pressable onPress={()=>navigate('/webviewDevotionals/'+index)}>
+                            <Pressable onPress={()=>navigate('/webview/devotionals/'+index)}>
                                 <View key={index} style={styles.item} >
                                 
                                     <Text style={styles.text}>{item.title}</Text>
@@ -52,6 +54,7 @@ const Thumbnail = () =>{
                             </Pressable>
                         </LinearGradient>
                 )
+                 
                 }) : <ActivityIndicator size="large"/> 
             }
         </ScrollView>

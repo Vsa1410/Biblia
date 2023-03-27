@@ -43,8 +43,8 @@ export default MainBottom = () =>{
             <Pressable onPress={()=> navigate('/login')}>
 
                 <View style={styles.item}>
-                    <Icon color={"#cad2c5"} style={styles.icon} name="heart-outline" size={30} />
-                    <Text style={styles.text}>Favoritos</Text>
+                    <Icon color={"#cad2c5"} style={styles.icon} name="account" size={30} />
+                    <Text style={styles.text}>Usuário</Text>
                 </View>
             </Pressable>
         </View>

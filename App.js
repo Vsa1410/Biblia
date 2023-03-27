@@ -22,10 +22,16 @@ import * as Permissions from 'expo-permissions';
 import Register from './src/Screens/Register';
 import UserIndex from './src/Screens/UserIndex';
 import * as Notifications from 'expo-notifications'
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useContext } from 'react';
 import { Link, useNavigate } from "react-router-native";
-import { sendExpoToken, getPlansData, getDevotionalsData } from './serverConnections/routes';
+import { sendExpoToken, getPlansData, getDevotionalsData, getMessagesData } from './serverConnections/routes';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import AllPlans from './src/Screens/AllPlans';
+import UserConfigure from './src/Screens/UserConfigure';
+import { ApiProvider } from './src/Components/Context/ApiContext';
+import { ThemeContext, ThemeProvider } from './src/Components/Context/ThemeContext';
+import ThemeScreen from './src/Screens/Themescreen';
+
 
 
 
@@ -34,7 +40,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function App() {
   
-  //const navigate = useNavigate()
+  
 
   async function setItemToken(token){
 
@@ -94,64 +100,89 @@ export default function App() {
     
       //Get token (Id of device)
       async function handleTokenPush () {
-        async function registerForPushNotificationsAsync() {
-          const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
-          if (status !== 'granted') {
-            return;
-          }
-          const token = (await Notifications.getExpoPushTokenAsync()).data;
-          console.log(token);
-                   
+        function sendTokenToDB(token){
+          
           if(token){
             console.log(token)
             setItemToken(token)
             sendExpoToken(token)
             
           }
+          
         }
-        registerForPushNotificationsAsync()
+          
+          async function registerForPushNotificationsAsync() {
+              
+            }
+
+            const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
+            if (status !== 'granted') {
+              return;
+            }
+            const token = (await Notifications.getExpoPushTokenAsync()).data;
+              console.log(token);
+                sendTokenToDB(token)
+                  registerForPushNotificationsAsync()
+                   
+      
+      
         console.log(token)
       }
 
       //Get Data from Database
       getPlansData()
       getDevotionalsData()
+      getMessagesData()
 
   return (
-    <View style={styles.container}>
-      <NativeRouter>
-         
-        <MainHeader/>
-          <Routes>
-            
-            //Pages
-            <Route exact path={'/'} element={<Home/>}/>
-            <Route path={'/search'} element={<Search/>}/>
-            <Route path={'/plans'} element={<Plans/>}/>
-            <Route path={'/login'} element={<Authenticate/>}/>
+      
 
-            //Bible
-            <Route path='/read' element={<BibleList/>}/>
-            <Route path='/chapters/:id' element={<Chapter/>}/>
-            <Route path='/verse/:chapter/:verses' element={<Verses/>}/>
+        <View style={styles.container}>
+          <StatusBar style='light'/>
+          <NativeRouter>
+            <ThemeProvider>
 
-            //notifications
-            <Route path='/push/' element={<PushNotifications/>}/>
-            <Route path='/webview/:plans' element={<WebViews/>}/>
-            <Route path='/webviewDevotionals/:plans' element={<WebViewsDevotionals/>}/>
+              <ApiProvider>
+                <MainHeader/>
+
+                    <Routes>
+                      //Pages
+                      <Route exact path={'/'} element={<Home/>}/>
+                      <Route path={'/search'} element={<Search/>}/>
+                      <Route path={'/plans'} element={<Plans/>}/>
+                      <Route path={'/login'} element={<Authenticate/>}/>
+
+                      //Bible
+                      <Route path='/read' element={<BibleList/>}/>
+                      <Route path='/chapters/:id' element={<Chapter/>}/>
+                      <Route path='/verse/:chapter/:verses' element={<Verses/>}/>
+
+                      //notifications
+                      <Route path='/push/' element={<PushNotifications/>}/>
+
+                      //plans
+                      <Route path='/webview/:plans' element={<WebViews/>}/>
+                      <Route path='/webview/:category/:plans' element={<WebViewsDevotionals/>}/>
+                      <Route path='/posts/:categories' element={<AllPlans/>}/>
 
 
-            //Users
-            <Route path='/register' element={<Register/>}/>
-            <Route path='/userindex' element={<UserIndex/>}/>
-            <Route path='/favoriteTexts/:userId' element={<Favorites/>}/>
-            
-            
+                      //Users
+                      <Route path='/register' element={<Register/>}/>
+                      <Route path='/userindex' element={<UserIndex/>}/>
+                      <Route path='/favoriteTexts/:userId' element={<Favorites/>}/>
+                      <Route path='/userconfiguration' element={<UserConfigure/>}/>
+                      <Route path='/theme' element={<ThemeScreen/>}/>
+                      
+                      
 
-          </Routes>
-        <MainBottom/>
-      </NativeRouter>
-    </View>
+                    </Routes>
+                    
+                <MainBottom/>
+            </ApiProvider>
+          </ThemeProvider>
+          </NativeRouter>
+        </View>
+      
   );
 }
 
@@ -160,6 +191,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    
     
   },
 });

@@ -1,10 +1,12 @@
-import {Text, ScrollView, View, StyleSheet, Item, FlatList, Pressable, Keyboard} from 'react-native'
-import { TextInput,IconButton, Button, } from '@react-native-material/core'
+import {Text, ScrollView, View, StyleSheet, Item, FlatList, Pressable, Keyboard, } from 'react-native'
+import { TextInput,IconButton,Button } from '@react-native-material/core'
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Card from './Cards';
 import { ActivityIndicator } from "@react-native-material/core";
 import { useNavigate } from 'react-router-native';
+import { ThemeContext } from '../../Components/Context/ThemeContext';
+import { StatusBar } from 'expo-status-bar';
 
 
 const data = require('../../../assets/database/aa.json')
@@ -12,6 +14,7 @@ const data = require('../../../assets/database/aa.json')
 const Search = ()=>{
 
     const navigate = useNavigate()
+    const { isDarkMode, toggleTheme } = useContext(ThemeContext)
     
     const [searchText , setSearchText] = useState('');
     const [completeResults, setCompleteResults] = useState([]);
@@ -67,23 +70,29 @@ const Search = ()=>{
        
     
     if(loading === true){
-        handleSearch(searchText)
+            handleSearch(searchText)
+        
     }
       
       
         
     return(
-        <View style={styles.container}>
+        <View style={isDarkMode?stylesDark.container:styles.container}>
             <TextInput
                 
                 variant="outlined"
                 leading={ (
                     <IconButton icon={ <Icon name="magnify" size={35}/>}/>
                 )}
+                placeholder="Pesquisar"
                 onChangeText={newText => setSearchText(newText)}
-                style={styles.search}
+                style={isDarkMode?stylesDark.search:styles.search}
                 color='black'
-                onSubmitEditing={()=> setLoading(true)}
+                onSubmitEditing={()=> {
+                    if(searchText.length>=3){
+
+                        setLoading(true)}}
+                    }
                 
                 
                 />
@@ -92,13 +101,17 @@ const Search = ()=>{
                 onPress= {()=> {
                     Keyboard.dismiss()
                     setTimeout(() => {
-                        setLoading(true)
+                        if(searchText.length>=3){
+
+                            setLoading(true)
+                        }
                         
                     }, 2000);
                 }}
                 title='Buscar'
-                style={styles.button}
-                color='black'
+                style={isDarkMode?stylesDark.button:styles.button}
+                color='#999999'
+                backgroundColor="#999999"
                 loading={loading}
                   
                 /> 
@@ -106,9 +119,11 @@ const Search = ()=>{
                 
             
             <ScrollView style={styles.results}>
-            {loading&&
+            {(completeResults.length===0)&&
+                <Text>Nenhum Resultado Encontrado</Text>
+            
 
-                <Text>Carregando resultados...</Text>
+                
                 }
                 
                 {completeResults.map((item, index) => {
@@ -142,15 +157,17 @@ const styles = StyleSheet.create({
         
     },
     results:{
-        width:'100%',
-        marginBottom:"20%",
-        maxMarginBottom:75,
+        
+        marginBottom:340,
+        
         marginTop:5,
+        
         
     },
     container:{
         paddingButton: 300,
-        marginBottom:300,
+        
+        
     },
     button:{
         width: 200,
@@ -172,9 +189,31 @@ const styles = StyleSheet.create({
         
     },
     blankspace:{
-        paddingTop:500
+        
     },
    
    
+})
+const stylesDark = StyleSheet.create({
+    container:{
+        backgroundColor:"#181818",
+        paddingBottom: 300
+    },
+    search:{
+        width:'90%',
+        alignSelf:'center',
+        marginTop:10,
+        marginBottom:10,
+        backgroundColor:"#181818"
+        
+    },
+    button:{
+        width: 200,
+        alignSelf:'center',
+        marginTop:10,
+        marginBottom:10,
+       
+        
+    }, 
 })
 export default Search

@@ -55,7 +55,7 @@ const Favorites = () =>{
                 })}
 
             </ScrollView>
-            <View>
+            <View style={styles.blankSpace}>
                 
             </View>
         </View>
@@ -63,7 +63,8 @@ const Favorites = () =>{
 }
 const styles = StyleSheet.create({
     container:{
-        margin:10
+        margin:10,
+        paddingBottom:"20%"
     },
     title: {
         fontSize:20,
@@ -87,6 +88,8 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight:'bold',
         alignSelf:'flex-end'
+    },blankSpace:{
+        height:"37%"
     }
 
 })

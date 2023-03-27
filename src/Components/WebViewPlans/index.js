@@ -16,7 +16,7 @@ const WebViews = () =>{
         
        try{
 
-           const jsonValue = await AsyncStorage.getItem('@localDataPlans')
+           const jsonValue = await AsyncStorage.getItem('@localDataplans')
            setResponse(JSON.parse(jsonValue))
            setIsLoading(false)
            

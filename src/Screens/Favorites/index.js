@@ -28,11 +28,9 @@ const Authenticate = () =>{
             console.log(token)
             setToken(token)
             
-            const tokenjwt= token;
-    
-            const decoded = jwtDecode(tokenjwt);
+            
                 
-            console.log(decoded);
+            
         }
     }
 
@@ -64,13 +62,13 @@ const Authenticate = () =>{
                 }, 2000);
                 
             })
-            .catch(err=>{
+            .catch(res=>{
                 setLoading(false)
                 setLoginError(true)
                 setTimeout(()=>{
                     setLoginError(false)
                 }, 3500)
-                console.log(err)
+                console.log(res.data)
             })
         }else{
             setFill(true)

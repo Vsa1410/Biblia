@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useEffect } from "react";
 import { View, ScrollView, FlatList, Item, Text,StyleSheet, SectionList, ImageBackground } from "react-native";
 import { Link } from "react-router-native";
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-native";
 import { useParams } from "react-router-native";
 import { Divider } from "@react-native-material/core";
 import * as Svg from 'react-native-svg';
+import { ThemeContext } from "../../Components/Context/ThemeContext";
 
 
 
@@ -15,12 +16,13 @@ const data = require("../../../assets/database/aa.json")
 
 const BibleList = () =>{
     
+    const { isDarkMode} = useContext(ThemeContext)
     const navigate = useNavigate()
     
     return(
-        <View style={styles.fixedView}>       
+        <View style={isDarkMode? stylesDark.fixedView:styles.fixedView}>       
           
-            <ScrollView style={styles.view} showsVerticalScrollIndicator={false}>
+            <ScrollView style={isDarkMode? stylesDark.view:styles.view} showsVerticalScrollIndicator={false}>
 
               {/*<FlatList
                 data={list}
@@ -31,9 +33,9 @@ const BibleList = () =>{
               {data.map((book, index)=>{
                 return(
 
-                  <View styles={styles.card} key={index}>
-                    <Text style={styles.item} onPress={(e)=> navigate("/chapters/"+index)} >{book.name}</Text>
-                    <Divider/>
+                  <View styles={isDarkMode? stylesDark.card:styles.card} key={index}>
+                    <Text style={isDarkMode? stylesDark.item:styles.item} onPress={(e)=> navigate("/chapters/"+index)} >{book.name}</Text>
+                    <Divider color={isDarkMode? "#6a6c6a":"#e9e6e6"}/>
                   </View>
                 )
                 })}  
@@ -70,7 +72,46 @@ const styles = StyleSheet.create({
     padding:10
   },
   fixedView:{
-    height:"100%"
+    height:"100%",
+  },
+  blankSpace:{
+    padding:150,
+  }
+  
+})
+const stylesDark = StyleSheet.create({
+  item: {
+    padding: 15,
+    fontSize: 18,
+    backgroundColor:"#181818",
+    color:"#fff"
+    
+  
+  },
+  view:{
+
+    minWidth:"100%",
+    backgroundColor: "white",
+    paddingBottom:20,
+    paddingLeft:20,
+    paddingTop:20,
+    backgroundColor:'#181818'
+        
+
+       
+        
+  },
+  card:{
+    height: 20,
+    
+    paddingBottom: 5,
+    padding:10,
+    backgroundColor:"#181818"
+  },
+  fixedView:{
+    height:"100%",
+    backgroundColor:'#181818'
+    
   },
   blankSpace:{
     padding:150,
