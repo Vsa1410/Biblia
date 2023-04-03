@@ -43,7 +43,7 @@ const VerseOfDay = () =>{
             if(jsonValue){
                 const response = await JSON.parse(jsonValue);
                 setVerseOfDay(response)
-                console.log(verseOfDay)
+                
         }
         }catch{
 
@@ -85,7 +85,8 @@ const styles = StyleSheet.create({
         fontSize:16,
         marginTop:10,
         color: 'black',
-        margin:20
+        margin:20,
+        fontWeight:'300'
     },
     reference:{
         fontSize:15,
@@ -117,7 +118,8 @@ const stylesDark =StyleSheet.create({
         fontSize:16,
         marginTop:10,
         color: 'white',
-        margin:20
+        margin:20,
+        fontWeight:'300'
     },
     reference:{
         fontSize:15,

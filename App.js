@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NativeRouter, Route, Routes } from 'react-router-native';
-import Header from './src/Components/Header';
+
 import Chapter from './src/Screens/Chapter';
 import Home from './src/Screens/Home';
 import Verses from './src/Screens/Verse';
@@ -31,6 +31,7 @@ import UserConfigure from './src/Screens/UserConfigure';
 import { ApiProvider } from './src/Components/Context/ApiContext';
 import { ThemeContext, ThemeProvider } from './src/Components/Context/ThemeContext';
 import ThemeScreen from './src/Screens/Themescreen';
+import AllVersesofDay from './src/Screens/VersesofDay';
 
 
 
@@ -172,6 +173,7 @@ export default function App() {
                       <Route path='/favoriteTexts/:userId' element={<Favorites/>}/>
                       <Route path='/userconfiguration' element={<UserConfigure/>}/>
                       <Route path='/theme' element={<ThemeScreen/>}/>
+                      <Route path= '/allversesofday' element={<AllVersesofDay/>}/>
                       
                       
 

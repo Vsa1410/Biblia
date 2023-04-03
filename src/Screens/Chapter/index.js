@@ -125,6 +125,7 @@ const styles = StyleSheet.create({
         fontSize:16,
         paddingLeft:25,
         paddingBottom:25,
+        fontWeight:'300'
     },
     author:{
         fontWeight:"500",
@@ -195,7 +196,8 @@ const stylesDark = StyleSheet.create({
         fontSize:16,
         paddingLeft:25,
         paddingBottom:25,
-        color:'#fff'  
+        color:'#fff' ,
+        fontWeight:'300' 
     },
     author:{
         fontWeight:"500",

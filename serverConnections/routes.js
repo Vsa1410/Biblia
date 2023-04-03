@@ -5,15 +5,15 @@ import jwtDecode from "jwt-decode";
 
 
 export const baseUrl = {
-    user:           "http://192.168.2.125:3001/users",
-    generalUsers:   'http://192.168.2.125:3001/generaluser/',
-    tokens:         'http://192.168.2.125:3001/tokens/',
-    devotionals:    'http://192.168.2.125:3001/devotionals',
-    plans:          'http://192.168.2.125:3001/plans/',
-    login:          'http://192.168.2.125:3001/login/',
-    favorites:      'http://192.168.2.125:3001/favorites/',
-    verseOfDay:     'http://192.168.2.125:3001/verseofday/',
-    posts:          'http://192.168.2.125:3001/posts/'
+    user:           "https://bibliabackend.fly.dev/users",
+    generalUsers:   'https://bibliabackend.fly.dev/generaluser/',
+    tokens:         'https://bibliabackend.fly.dev/tokens/',
+    devotionals:    'https://bibliabackend.fly.dev/devotionals',
+    plans:          'https://bibliabackend.fly.dev/plans/',
+    login:          'https://bibliabackend.fly.dev/login/',
+    favorites:      'https://bibliabackend.fly.dev/favorites/',
+    verseOfDay:     'https://bibliabackend.fly.dev/verseofday/',
+    posts:          'https://bibliabackend.fly.dev/posts/'
 }
 
 export async function sendExpoToken(token){
@@ -21,7 +21,7 @@ export async function sendExpoToken(token){
         token:token
     })
     .then((response)=>{
-        console.log(response);
+        
     })
     .catch((err)=>{
         console.log(err);
@@ -69,7 +69,7 @@ export async function getLocalToken(){
     const token = await AsyncStorage.getItem('jwtoken')
     const decode = await jwtDecode(token)
     if(token){    
-        console.log(decode.userId)
+        
         return decode.userId
         
     }

@@ -53,7 +53,7 @@ const Register = () =>{
         }
         setLoading(true)
         
-            console.log(name+email+password)
+            
             
             axios.post(baseUrl.generalUsers,{
                 name:name,
@@ -62,13 +62,12 @@ const Register = () =>{
                 })
         .then(
             (response)=>{
-                console.log(response);
-                console.log(password)
+                
                 navigate('/login')
             }
         )
         .catch((res)=>{
-            console.log(res)
+            
             setLoading(false)
         })
     }

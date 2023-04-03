@@ -197,7 +197,8 @@ const styles = StyleSheet.create({
 const stylesDark = StyleSheet.create({
     container:{
         backgroundColor:"#181818",
-        paddingBottom: 300
+        paddingBottom: 0,
+        height:"100%"
     },
     search:{
         width:'90%',
@@ -215,5 +216,14 @@ const stylesDark = StyleSheet.create({
        
         
     }, 
+    results:{
+        
+        marginBottom:340,
+        
+        marginTop:5,
+        backgroundColor:"#181818"
+        
+        
+    },
 })
 export default Search

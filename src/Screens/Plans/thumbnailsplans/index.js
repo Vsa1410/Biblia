@@ -31,7 +31,7 @@ const ThumbnailPlans = () =>{
     useEffect(() => {
 
         getLocalData()
-        console.log(thumbnailData)
+        
        
     },[])
         

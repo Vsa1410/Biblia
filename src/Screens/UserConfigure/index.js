@@ -17,10 +17,14 @@ const UserConfigure = () =>{
           const [confirmPassword, setConfirmPassword] = useState('')
             const [passwordError, setPasswordError] = useState('')
 
-    const [loading, setLoading] = useState(false)        
-    const {data, toggleData} = useContext(ApiContext)
+    const [loading, setLoading] = useState(false)
+    const [loadingLogOut, setLoadingLogOut] = useState(false)      
+    const {data, toggleData, deleteUserData, logged} = useContext(ApiContext)
+    
         useEffect(()=>{
             toggleData()
+            
+            
         },[]) 
         
         
@@ -30,16 +34,17 @@ const UserConfigure = () =>{
     
     
     async function changeData(){
-        setEmail(data.email)
-        console.log(email)
+        
+        
         setLoading(true)
         axios.put(baseUrl.generalUsers, {
             password: password,
-            email: email
+            email: data.email
           })
           .then(response => {
-            console.log(response.data);
             
+            navigate('/userindex')
+            toggleData()
           })
           .catch(error => {
             console.log(error);
@@ -59,8 +64,16 @@ const UserConfigure = () =>{
                 return
             }
        }
-    return(
-        <ScrollView style={styles.container}>
+    if(!logged){
+        useEffect(()=>{
+
+            navigate('/login')
+        },[])
+        
+    }else{
+
+        return(
+            <ScrollView style={styles.container}>
             <Text style={styles.title}>Editar Dados de Usuário</Text>
               <ScrollView>
                
@@ -70,12 +83,14 @@ const UserConfigure = () =>{
                     placeholder='Nova Senha*'
                     secureTextEntry={true}
                     onChangeText={(e)=> setPassword(e)}
+                    autoCapitalize="none"
                     />
                 <TextInput
                     style={styles.input}
                     placeholder='Confirme Sua Senha*'
                     secureTextEntry={true}
                     onChangeText={(e)=> setConfirmPassword(e)}
+                    autoCapitalize="none"
                     />
                 {passwordError&&<Text>As senhas não coincidem</Text>}    
                     
@@ -84,15 +99,29 @@ const UserConfigure = () =>{
                     color="black"
                     style={styles.button}
                     onPress={validatePassword}
-                    loading={loading}/>
-                
-                
-                
-                    
+                    loading={loading}/>              
               </ScrollView>
+              <Button
+                title="LogOut"
+                color="error"
+                variant="outLined"
+                loading={loadingLogOut}
+                style={styles.button}
+                onPress={()=>{
+                    setLoadingLogOut(true)
+                    
+                    
+                    deleteUserData()
+                    
+                    navigate('/userindex')
+                    setLoadingLogOut(false)
+                    
+                }}
+                />
 
         </ScrollView>
     )
+    }
 }
 const styles = StyleSheet.create({
     title:{

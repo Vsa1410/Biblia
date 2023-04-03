@@ -31,7 +31,7 @@ const ThumbnailMessages = () =>{
     useEffect(() => {
 
         getLocalData()
-        console.log(thumbnailData)
+        
        
     },[])
         

@@ -99,12 +99,12 @@ const WebViewsDevotionals = () =>{
      }else{
 
          return(
-             <ScrollView >
+             <View style={styles.container}>
             
     
                 <Text style={styles.title}>{response[param.plans].title}</Text>
 
-                <ScrollView style={styles.view} >
+                <View style={styles.view} >
 
                     <WebView style={styles.webview} 
                         source={{ html: css + response[param.plans].body +cssbottom}}
@@ -113,8 +113,8 @@ const WebViewsDevotionals = () =>{
 
 
                     />
-                </ScrollView>
-            </ScrollView>
+                </View>
+            </View>
     )
     
     }
@@ -123,11 +123,9 @@ const WebViewsDevotionals = () =>{
 
 const styles = StyleSheet.create({
     container: {
-        
-        width: '90%',
-        height: 300,
+        height: "100%",
         color:'black',
-        marginTop: 100
+        paddingBottom:200
     },
     title:{
         fontSize: 30,
@@ -138,11 +136,13 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     webview:{
-        width: "90%",
-        
+        width: "95%",
+        height:"70%",
         marginLeft:15,
-        marginRight:20,
-        paddingTop:950,
+        marginRight:30,
+        marginBottom:70,
+        
+        
         
         
         backgroundColor: '#fff',
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     },
     view:{
         
-        marginBottom:0,
+        height:"100%"
         
         
     }

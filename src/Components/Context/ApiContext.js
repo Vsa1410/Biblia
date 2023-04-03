@@ -8,6 +8,7 @@ export const ApiProvider = ({children}) =>{
 
     const [data, setData] = useState()
     const [logged, setLogged] = useState(false)
+    
 
     async function toggleData(){
         

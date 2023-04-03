@@ -24,7 +24,7 @@ export default function Home() {
   getDevotionalsData()
   getMessagesData()
   const {isDarkMode, toggleTheme} = useContext(ThemeContext)
-  console.log(isDarkMode)
+  
 
   const navigate = useNavigate()
 

@@ -1,6 +1,6 @@
 import { TextInput, Button, Divider } from "@react-native-material/core"
 import { ScrollView, Text, StyleSheet, View, ActivityIndicator } from "react-native"
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import { useNavigate } from "react-router-native"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import axios from "axios"
@@ -8,6 +8,7 @@ import { baseUrl } from "../../../serverConnections/routes"
 import jwtDecode from 'jwt-decode';
 import UserIndex from "../UserIndex"
 import Register from "../Register"
+import { ApiContext } from "../../Components/Context/ApiContext"
 
 
 
@@ -20,17 +21,12 @@ const Authenticate = () =>{
     const [password, setPassword] = useState('')
     const [token, setToken] = useState('')
     const [fill, setFill] = useState(false)
+    const { toggleData} = useContext(ApiContext)
 
     async function getLocalToken(){
         const token = await AsyncStorage.getItem('jwtoken')
         if(token){
-
-            console.log(token)
-            setToken(token)
-            
-            
-                
-            
+            setToken(token)           
         }
     }
 
@@ -48,7 +44,7 @@ const Authenticate = () =>{
                 password:password
             })
             .then(res =>{
-            console.log(res)
+            
             setToken(res.data.token)
             
             AsyncStorage.setItem('jwtoken', res.data.token)
@@ -58,7 +54,8 @@ const Authenticate = () =>{
                 
                 setTimeout(() => {
                     
-                    navigate('/userindex')
+                    navigate('/plans')
+                    
                 }, 2000);
                 
             })
@@ -68,7 +65,7 @@ const Authenticate = () =>{
                 setTimeout(()=>{
                     setLoginError(false)
                 }, 3500)
-                console.log(res.data)
+                
             })
         }else{
             setFill(true)
@@ -84,14 +81,7 @@ const Authenticate = () =>{
     
 
 
-    if(token){
-        return(
-
-            <UserIndex/>
-        )
-    }
     
-    if(!token){
 
         return(
             <View style={styles.container}>
@@ -155,7 +145,7 @@ const Authenticate = () =>{
         )
     }
 
-}
+
 const styles = StyleSheet.create({
     title:{
         fontSize: 20,

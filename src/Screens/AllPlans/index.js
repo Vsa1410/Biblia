@@ -12,8 +12,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const AllPlans = () =>{
     const categories = useParams()
-    console.log(categories.categories)
-
+    
     const [data, setData] = useState('')
     
 
@@ -38,7 +37,7 @@ const AllPlans = () =>{
     }else{
 
         return(
-            <ScrollView>
+            <View>
                 <View>
                     <LinearGradient
                          colors={['#495447', '#47903b']}
@@ -66,7 +65,7 @@ const AllPlans = () =>{
                             )
                         })}
                     </View>
-            </ScrollView>
+            </View>
         )
     }
     }

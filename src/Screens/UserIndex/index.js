@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect } from "react"
-import { Text, StyleSheet, View, ScrollView } from "react-native"
+import { Text, StyleSheet, View, ScrollView, Pressable } from "react-native"
 import { baseUrl } from "../../../serverConnections/routes"
 import { useState } from "react"
 import axios from "axios"
@@ -8,6 +8,7 @@ import jwtDecode from 'jwt-decode';
 import { ActivityIndicator, Button, Divider, ListItem } from "@react-native-material/core"
 import { useNavigate } from "react-router-dom"
 import { ApiContext } from "../../Components/Context/ApiContext"
+import { ThemeContext } from "../../Components/Context/ThemeContext"
 
 
 
@@ -29,19 +30,18 @@ function UserIndex(){
     const navigate = useNavigate()
 
     const {data, toggleData, deleteUserData} = useContext(ApiContext)
+    const {isDarkMode} = useContext(ThemeContext)
    
     useEffect(()=>{
-        toggleData()
-        if(data){
-            setLoading(false)
-        }
-    }, [data])
+        
+       toggleData()
+    }, [])
    
 
     useEffect(()=>{
         
         getLocalToken()
-        
+        toggleData()
     },[setDecodedToken])
 
     async function getLocalToken(){
@@ -89,38 +89,46 @@ function UserIndex(){
     
 
         return(
-            <View style={styles.container}>
+            <View style={isDarkMode?stylesDark.container:styles.container}>
             
                 
-                {data ? <Text style={styles.subtitle}>Olá, {data.name}</Text>: <ActivityIndicator/>}
+                {data ? <Text style={isDarkMode?stylesDark.subtitle:styles.subtitle}>Olá, {data.name}</Text>: <Text style={isDarkMode?stylesDark.subtitle:styles.subtitle}>Menu</Text>}
                
-                <ScrollView style={styles.list}>
-                    <ListItem style={styles.item} title="Minha Conta" onPress={()=> navigate('/userconfiguration')}/>
-                    <ListItem style={styles.item} title="Textos Favoritos" onPress={()=> navigate('/favoriteTexts/'+decodedToken)}/>
-                    <ListItem style={styles.item} title="Versículo do dia"/>
-                    <Divider/>
-                    <ListItem style={styles.item} title="Modo de leitura" onPress={()=> navigate('/theme')}/>
+                <ScrollView style={isDarkMode?stylesDark.list:styles.list}>
+                    
+
+                    <Pressable  onPress={()=> navigate('/userconfiguration')}>
+                        <View style={isDarkMode?stylesDark.item:styles.item}>
+                            <Text style={isDarkMode?stylesDark.itemText:styles.itemText}>Minha Conta</Text>
+                        </View>
+                    </Pressable>
+                    <Pressable onPress={()=> navigate('/favoriteTexts/'+ decodedToken)}>
+                        <View style={isDarkMode?stylesDark.item:styles.item} >
+                            <Text style={isDarkMode?stylesDark.itemText:styles.itemText}>Textos Favoritos</Text>
+                        </View>
+                    </Pressable>
+                    <Pressable onPress={()=> navigate('/allversesofday')}>
+                        <View style={isDarkMode?stylesDark.item:styles.item} >
+                            <Text style={isDarkMode?stylesDark.itemText:styles.itemText}>Versículo do dia</Text>
+                        </View>
+                    </Pressable>
+
+                    <Divider style={{marginTop:40}}/>
+
+                    <Pressable onPress={()=> navigate('/theme')}>
+                        <View style={isDarkMode?stylesDark.itemMode:styles.itemMode} title="Modo de leitura" >
+                            <Text style={isDarkMode?stylesDark.itemText:styles.itemText}>
+                                Modo de leitura
+                            </Text>
+                            {isDarkMode?<Text style={{color:"#c8ccce"}}>Modo Escuro</Text>:<Text style={{color:"#c8ccce"}}>Modo Claro</Text>}
+                        </View>
+                    </Pressable>
+                    
                     
                 </ScrollView>
                 {/*isLoading&&<ActivityIndicator/>*/}
 
-                <Button
-                title="LogOut"
-                color="error"
-                variant="outLined"
-                loading={isLoading}
-                style={styles.button}
-                onPress={()=>{
-                    setLoading(true)
-                    {/*isLoading&&<ActivityIndicator/>*/}
-                    
-                    deleteUserData()
-                    setTimeout(() => {
-                        navigate('/plans')
-                        setLoading(false)
-                    }, 2000);
-                }}
-            />
+                
                 
             </View>
             )
@@ -137,11 +145,88 @@ const styles = StyleSheet.create({
         height:"100%"
     },
     list:{
-        paddingTop: 20,
-        height:200,
+        width:"100%",
+        
+        
+        display: 'flex',
+        flexDirection:"column",
+
     },
     button:{
         bottom:300
+    },
+    item:{
+        height:60,
+        width:"100%",
+        justifyContent:"center",
+        borderBottomColor:"#c8ccce",
+        borderBottomWidth:0.8,
+        borderStyle:"solid"
+        
+    },
+    itemText:{
+        fontSize:18,
+        paddingLeft:30
+    },
+    itemMode:{
+        display:"flex",
+        justifyContent:"space-between",
+        flexDirection:"row",
+        paddingRight:30,
+        height:60,
+        borderBottomColor:"#c8ccce",
+        borderBottomWidth:0.8,
+        borderStyle:"solid",
+        alignItems:"center"
+
+    }
+     
+})
+const stylesDark = StyleSheet.create({
+    subtitle:{
+        fontSize: 20,
+        fontWeight: 'bold',
+        margin:15,
+        color:"#fff"
+    },
+    container:{
+        height:"100%",
+        backgroundColor: "#181818"
+    },
+    list:{
+        paddingTop: 20,
+        height:200,
+        
+        backgroundColor:"#181818"
+    },
+    button:{
+        bottom:300
+    },
+    item:{
+        height:60,
+        width:"100%",
+        justifyContent:"center",
+        borderBottomColor:"#fff",
+        borderBottomWidth:0.8,
+        borderStyle:"solid"
+        
+    },
+    itemText:{
+        fontSize:18,
+        paddingLeft:30,
+        color:"#fff"
+    },
+    itemMode:{
+        display:"flex",
+        justifyContent:"space-between",
+        flexDirection:"row",
+        paddingRight:30,
+        height:60,
+        borderBottomColor:"#c8ccce",
+        borderBottomWidth:0.8,
+        borderStyle:"solid",
+        alignItems:"center"
+
     }
 })
 

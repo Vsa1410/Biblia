@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-native";
 import{ Text, StyleSheet, ScrollView, View, Vibration } from "react-native"
 import {Alert, Share, } from 'react-native';
-import Header from "../../Components/Header/index"
+
 import { useRef, useState, useEffect, useContext } from "react";
 import { Stack, IconButton, select, Snackbar, Dialog, DialogHeader, DialogContent, DialogActions, Button } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
@@ -20,6 +20,9 @@ const Verses = () => {
     const { isDarkMode } = useContext(ThemeContext)
     const { toggleData, deleteUserData, logged} = useContext(ApiContext)
     console.log(logged)
+    
+
+    const [scrollPreviousPositision, setPreviousPosition] = useState(0)
     
 
     const [visible, setVisible] = useState(false)
@@ -58,7 +61,18 @@ const Verses = () => {
     const[isSelected, setSelected] = useState("")
     
     const [isSucess, setSucess] = useState(false)
-   
+
+    const[errorMessage, setErrorMessage] = useState(false)
+    
+    function handleScroll(event){
+        const positionY = event.nativeEvent.contentOffset.y
+        setPreviousPosition(positionY)
+        if (positionY>scrollPreviousPositision){
+            console.log("desaparece")
+        }else if(positionY<scrollPreviousPositision){
+            console.log("aparece")
+        }
+    }
 
     //Function to Show options menu, the text, book chapter and verse were passed to function when press the button
     //At the function this will be formated to the user to share with someone via Share API
@@ -102,6 +116,13 @@ const Verses = () => {
                     setSucess(false)
                 },3000)
             })
+            .catch(()=> {
+                setErrorMessage(true)
+                setTimeout(()=>{
+                    setErrorMessage(false)
+                }, 3000)
+            })
+            
         }else if (logged === false){
 
            setVisible(true)
@@ -160,7 +181,7 @@ const Verses = () => {
                 <IconButton onPress={()=> navigate(-1)} icon={props =>  <Icon name="chevron-left" {...props} color="#999999"/>}/>
                 <Text style={isDarkMode? stylesDark.title:styles.title}>{data[id.chapter].name}  {Number(id.verses) + 1}</Text>
             </View>
-            <ScrollView >
+            <ScrollView onScroll={handleScroll}>
 
                     <ScrollView style={isDarkMode? stylesDark.view:styles.view}>
 
@@ -201,6 +222,11 @@ const Verses = () => {
             }
             {isSucess&& <Snackbar
                             message="Adicionado aos Favoritos"
+                            style={styles.snackbar}
+                            color="error"
+                            />}
+             {errorMessage&& <Snackbar
+                            message="Erro ao adicionar aos Favoritoss"
                             style={styles.snackbar}
                             color="error"
                             />}
@@ -282,7 +308,8 @@ const styles = StyleSheet.create({
 })
 const stylesDark = StyleSheet.create({
     container:{
-        backgroundColor:"#181818"
+        backgroundColor:"#181818",
+        paddingBottom:250
     },
     text:{
         paddingLeft:15,
