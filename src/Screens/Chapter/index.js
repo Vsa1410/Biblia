@@ -25,7 +25,7 @@ const Chapter = () =>{
     return(
         <View style={isDarkMode? stylesDark.container: styles.container}>
                 <View style={isDarkMode? stylesDark.titleView:styles.titleView}>
-                    <IconButton onPress={()=> navigate(-1)} icon={props =>  <Icon name="chevron-left" {...props}color="#999999"/>}/>
+                    <IconButton onPress={()=> navigate('/read')} icon={props =>  <Icon name="chevron-left" {...props}color="#999999"/>}/>
                     <Text style={isDarkMode?stylesDark.title:styles.title}>{data[id.id].name}</Text>
                 </View>
             <ScrollView showsVerticalScrollIndicator={false} >

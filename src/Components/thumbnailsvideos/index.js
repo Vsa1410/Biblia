@@ -58,28 +58,28 @@ const ThumbnailVideos = () =>{
                 </Pressable>
                 <Modal
            
-           animationType="slide"
-           transparent={false}
-           visible={modalVisible}
-           onRequestClose={dismissModal}>
-            <Pressable onPress={()=> setModalVisible(false)}>
-                <Text style={styles.closeButton}>Voltar</Text>
-            </Pressable>
-                    <Video
-                        ref={video}
-                        style={styles.video}
-                        source={{
-                            uri: 'https://ik.imagekit.io/vsa1410/Img_4298.mp4?updatedAt=1680326552063'
-                        }}
-                        useNativeControls
-                        resizeMode="contain"
-                        onPlaybackStatusUpdate={status => setStatus(()=> status)}
-                        
+                    animationType="slide"
+                    transparent={false}
+                    visible={modalVisible}
+                    onRequestClose={dismissModal}>
+                        <Pressable onPress={()=> setModalVisible(false)}>
+                            <Text style={styles.closeButton}>Voltar</Text>
+                        </Pressable>
+                                <Video
+                                    ref={video}
+                                    style={styles.video}
+                                    source={{
+                                        uri: 'https://ik.imagekit.io/vsa1410/Img_4298.mp4?updatedAt=1680326552063'
+                                    }}
+                                    useNativeControls
+                                    resizeMode="contain"
+                                    onPlaybackStatusUpdate={status => setStatus(()=> status)}
+                                    
                     />
-                
+                            
 
-                
-             </Modal>
+                            
+                </Modal>
                 
             </ScrollView>
     )

@@ -1,10 +1,13 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.vsa1410.bible">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.vsa1410.bible">
   <uses-permission android:name="android.permission.INTERNET"/>
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
   <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
   <uses-permission android:name="android.permission.VIBRATE"/>
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+  <uses-permission android:name="android.permission.NOTIFICATIONS"/>
+
+
   
 
   <queries>
@@ -46,9 +49,13 @@
       android:name="com.google.android.gms.version"
       android:value="@integer/google_play_services_version" />
 
-    <service android:name="expo.modules.notifications.service.NotificationsService"
+    <service android:name=".NotificationsService"
       android:exported="false"
-      android:permission="android.permission.BIND_JOB_SERVICE" />
+    >
+      <intent-filter>
+        <action android:name="com.vsa1410.bible.NOTIFICATION_SERVICE"/>
+      </intent-filter>
+    </service>
     <receiver android:name="expo.modules.notifications.service.AlarmBroadcastReceiver"
       android:exported="false" />
     <receiver android:name="expo.modules.notifications.service.FirebaseBackgroundService$HeadlessBootCompletedReceiver"

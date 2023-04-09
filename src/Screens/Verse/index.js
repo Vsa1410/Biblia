@@ -1,10 +1,10 @@
 import { useNavigate, useParams } from "react-router-native";
-import{ Text, StyleSheet, ScrollView, View, Vibration } from "react-native"
+import{ Text, StyleSheet, ScrollView, View, Vibration, BackHandler } from "react-native"
 import {Alert, Share, } from 'react-native';
-
 import { useRef, useState, useEffect, useContext } from "react";
-import { Stack, IconButton, select, Snackbar, Dialog, DialogHeader, DialogContent, DialogActions, Button } from "@react-native-material/core";
+import { Stack, IconButton, select, Snackbar, Dialog, DialogHeader, DialogContent, DialogActions, Button, Surface } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import { FAB } from 'react-native-paper';
 import axios from "axios";
 import { baseUrl, handleFavoriteVerses } from "../../../serverConnections/routes";
 const data = require("../../../assets/database/aa.json")
@@ -15,14 +15,17 @@ import { ApiContext } from "../../Components/Context/ApiContext";
 import { ThemeContext } from "../../Components/Context/ThemeContext";
 
 
+
 const Verses = () => {
 
     const { isDarkMode } = useContext(ThemeContext)
     const { toggleData, deleteUserData, logged} = useContext(ApiContext)
-    console.log(logged)
+    
     
 
     const [scrollPreviousPositision, setPreviousPosition] = useState(0)
+
+    const [showHeader, setShowHeader] = useState(true)
     
 
     const [visible, setVisible] = useState(false)
@@ -63,14 +66,20 @@ const Verses = () => {
     const [isSucess, setSucess] = useState(false)
 
     const[errorMessage, setErrorMessage] = useState(false)
+
     
     function handleScroll(event){
         const positionY = event.nativeEvent.contentOffset.y
+        
         setPreviousPosition(positionY)
-        if (positionY>scrollPreviousPositision){
-            console.log("desaparece")
+
+        if(positionY < 50){
+            setShowHeader(true)
+        }
+        else if (positionY>scrollPreviousPositision){
+            setShowHeader(false)
         }else if(positionY<scrollPreviousPositision){
-            console.log("aparece")
+            setShowHeader(true)
         }
     }
 
@@ -129,6 +138,9 @@ const Verses = () => {
         }
     }
 
+    BackHandler.addEventListener( "hardwareBackPress",
+    ()=>navigate(-1))
+
 
     //function that implements the shareAPI
     const onShare = async () => {
@@ -150,6 +162,7 @@ const Verses = () => {
           Alert.alert(error.message);
         }
       };
+      
 
     return(
         <View style={isDarkMode?stylesDark.container:styles.container}>
@@ -176,12 +189,9 @@ const Verses = () => {
                         </View>
                 </View>
             )}
-           
-            <View style={isDarkMode? stylesDark.titleView:styles.titleView}>
-                <IconButton onPress={()=> navigate(-1)} icon={props =>  <Icon name="chevron-left" {...props} color="#999999"/>}/>
-                <Text style={isDarkMode? stylesDark.title:styles.title}>{data[id.chapter].name}  {Number(id.verses) + 1}</Text>
-            </View>
-            <ScrollView onScroll={handleScroll}>
+
+            
+            <ScrollView onScroll={handleScroll} scrollEventThrottle={3}>
 
                     <ScrollView style={isDarkMode? stylesDark.view:styles.view}>
 
@@ -196,6 +206,33 @@ const Verses = () => {
                          <Text style={styles.copyright}>Este projeto é distribuído sob a licença Creative Commons BY-NC. As traduções bíblicas deste projeto são de autoria e propriedade intelectual da Sociedade Bíblica Internacional (NVI), da Sociedade Bíblica Trinitariana (ACF) e da Imprensa Bíblica Brasileira (AA). Todos os direitos reservados aos autores.</Text>
                     </ScrollView>
             </ScrollView>
+            {showHeader&&
+            <Surface elevation={8} style={isDarkMode? stylesDark.titleView:styles.titleView}>
+                <View style={isDarkMode? stylesDark.titleView:styles.titleView} >
+                    <IconButton onPress={()=>{ 
+                        Vibration.vibrate(50)
+                        navigate("/chapters/"+id.chapter)
+                    } }
+                        icon={props =>  
+                            <Icon name="chevron-left" {...props} color="#999999"/>}
+                            />
+
+                    <Text style={isDarkMode? stylesDark.title:styles.title}>{data[id.chapter].name}  {Number(id.verses) + 1}</Text>
+                </View>
+            </Surface>
+            }
+            { Number(id.verses)>0 && <FAB
+                icon="chevron-left"
+                style={styles.fab}
+                onPress={() => navigate("/verse/"+ id.chapter +"/"+( Number(id.verses)-1))}
+                variant="surface"
+            />}
+            {Number(id.verses)+1 < Number(data[id.chapter].chapters.length)&&<FAB
+                icon="chevron-right"
+                style={styles.fabRight}
+                onPress={() => navigate("/verse/"+ id.chapter +"/"+( Number(id.verses)+1))}
+                variant="surface"
+            />}
             {
                 visible&& <Snackbar
                 style={styles.snackbar}
@@ -226,7 +263,7 @@ const Verses = () => {
                             color="error"
                             />}
              {errorMessage&& <Snackbar
-                            message="Erro ao adicionar aos Favoritoss"
+                            message="Erro ao adicionar aos Favoritos"
                             style={styles.snackbar}
                             color="error"
                             />}
@@ -240,9 +277,18 @@ const styles = StyleSheet.create({
         fontSize:18,
         marginTop:5,
         paddingBottom:5,
+   
+    },
+    fab:{
+        position:"absolute",
+        bottom:200,
+        left:20,
         
-
-
+    },
+    fabRight:{
+        position:"absolute",
+        bottom:200,
+        right:20
     },
     copyright:{
         color:"#999999",
@@ -257,11 +303,7 @@ const styles = StyleSheet.create({
         marginTop:5,
         textDecorationLine: "underline",
         textDecorationStyle: "dotted"
-        
-        
-        
-
-
+   
     },
     view:{
         paddingBottom:300,
@@ -276,10 +318,7 @@ const styles = StyleSheet.create({
     optionsIcon:{
         display: "flex",
         flexDirection: "row",
-        
-        
-        
-
+  
     },
     optionsIconButton:{
         marginRight:20
@@ -292,11 +331,7 @@ const styles = StyleSheet.create({
         justifyContent:"flex-start",
         alignItems: "center",
         borderBottomLeftRadius:15,
-        borderBottomRightRadius:15,
-
-        
-        
-
+        borderBottomRightRadius:15,     
     },
     snackbar:{
         position:"absolute",
@@ -318,9 +353,7 @@ const stylesDark = StyleSheet.create({
         marginTop:5,
         paddingBottom:5,
         color:'#fcfcfc'
-        
-
-
+    
     },
     textSelected:{
         paddingLeft:15,
@@ -331,16 +364,13 @@ const stylesDark = StyleSheet.create({
         textDecorationStyle: "dotted",
         textDecorationColor:"#fff",
         color:"#fff"
-        
-        
-        
-
-
+   
     },
     view:{
-        paddingBottom:300,
+        paddingBottom:250,
         backgroundColor:"#181818",
-        color:"#fefefe"
+        color:"#fefefe",
+        paddingTop:50
     },
     title:{
         fontSize:30,
@@ -352,10 +382,7 @@ const stylesDark = StyleSheet.create({
     optionsIcon:{
         display: "flex",
         flexDirection: "row",
-        
-        
-        
-
+   
     },
     optionsIconButton:{
         marginRight:20
@@ -368,7 +395,11 @@ const stylesDark = StyleSheet.create({
         flexDirection:"row",
         justifyContent:"flex-start",
         alignItems: "center", 
-        color:'#fff'     
+        color:'#fff', 
+        position:"absolute",
+        width:"100%",
+        top:0
+             
     },
     snackbar:{
         position:"absolute",

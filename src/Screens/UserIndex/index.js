@@ -29,7 +29,7 @@ function UserIndex(){
 
     const navigate = useNavigate()
 
-    const {data, toggleData, deleteUserData} = useContext(ApiContext)
+    const {data, toggleData, deleteUserData, logged} = useContext(ApiContext)
     const {isDarkMode} = useContext(ThemeContext)
    
     useEffect(()=>{
@@ -64,6 +64,13 @@ function UserIndex(){
                   
         })          
             
+    }
+    function navigateToFavorite() {
+        if(logged){
+            navigate('/favoriteTexts/'+ decodedToken)
+        }else if(!logged){
+            navigate('/login')
+        }
     }
 
     async function storeLocalData(response){
@@ -102,7 +109,7 @@ function UserIndex(){
                             <Text style={isDarkMode?stylesDark.itemText:styles.itemText}>Minha Conta</Text>
                         </View>
                     </Pressable>
-                    <Pressable onPress={()=> navigate('/favoriteTexts/'+ decodedToken)}>
+                    <Pressable onPress={navigateToFavorite}>
                         <View style={isDarkMode?stylesDark.item:styles.item} >
                             <Text style={isDarkMode?stylesDark.itemText:styles.itemText}>Textos Favoritos</Text>
                         </View>

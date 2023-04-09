@@ -45,11 +45,11 @@ function Plans(){
             </View>
             <ThumbnailMessages/>
             
-           <View style={styles.titleView}>
+           {/*<View style={styles.titleView}>
                 <Text style={isDarkMode? stylesDark.subtitle:styles.subtitle}>Vídeos</Text>
                 <Button style={styles.button} title='Ver Todos' variant="text" color={isDarkMode?"#fff":"#2b6e20"}  />
             </View>
-            <ThumbnailVideos/>
+            <ThumbnailVideos/>*/}
            
             
             

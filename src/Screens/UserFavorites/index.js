@@ -1,15 +1,20 @@
 import axios from 'axios'
 import {View, ScrollView, StyleSheet, Text, Pressable} from  'react-native'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { baseUrl } from '../../../serverConnections/routes'
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { useState } from 'react'
+import { ApiContext } from '../../Components/Context/ApiContext'
 
 const data = require('../../../assets/database/aa.json')
 
 const Favorites = () =>{
     //receive id from the another page
     const id = useParams()
+
+    const navigate = useNavigate()
+
+    const{logged} = useContext(ApiContext)
 
     //get data from database and make an array of favorites
     const [favoriteList, setFavoriteList] = useState('')    
@@ -25,6 +30,10 @@ const Favorites = () =>{
     useEffect(()=>{
         getFavorites()
     },[setFavoriteList])
+
+    if(!logged){
+        navigate("/login")
+    }
 
     if(!favoriteList){
         return(

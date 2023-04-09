@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "bible",
-    "slug": "bible",
+    "name": "Bíblia",
+    "slug": "Bíblia",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#2A4B24"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -26,12 +26,17 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#2A4B24"
       },
       "package": "com.vsa1410.bible"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8b870fa6-28be-46fa-b94d-e0d66fe79faa"
+      }
     }
   }
 }
