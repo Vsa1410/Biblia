@@ -7,6 +7,9 @@
       "preview": {
         "android": {
           "buildType": "apk"
+        },
+        "ios":{
+          "buildType":"ipa"
         }
       },
       "preview2": {
