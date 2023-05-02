@@ -1,6 +1,6 @@
 {
-  "name": "Bíblia",
-  "version": "1.0.0",
+  "name": "Biblia",
+  "version": "1.0.1",
   "scripts": {
     "start": "react-native start",
     "android": "react-native run-android",
