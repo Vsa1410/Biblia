@@ -302,7 +302,8 @@ const styles = StyleSheet.create({
         fontSize:18,
         marginTop:5,
         textDecorationLine: "underline",
-        textDecorationStyle: "dotted"
+        textDecorationStyle: "dotted",
+        zIndex:6,
    
     },
     view:{
@@ -318,6 +319,7 @@ const styles = StyleSheet.create({
     optionsIcon:{
         display: "flex",
         flexDirection: "row",
+        zIndex:6
   
     },
     optionsIconButton:{
@@ -363,14 +365,16 @@ const stylesDark = StyleSheet.create({
         textDecorationLine: "underline",
         textDecorationStyle: "dotted",
         textDecorationColor:"#fff",
-        color:"#fff"
+        color:"#fff",
+        
    
     },
     view:{
         paddingBottom:250,
         backgroundColor:"#181818",
         color:"#fefefe",
-        paddingTop:50
+        paddingTop:50,
+        zIndex:0
     },
     title:{
         fontSize:30,
@@ -398,7 +402,8 @@ const stylesDark = StyleSheet.create({
         color:'#fff', 
         position:"absolute",
         width:"100%",
-        top:0
+        top:0,
+        
              
     },
     snackbar:{

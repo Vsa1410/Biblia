@@ -141,9 +141,9 @@ export default function App() {
         <View style={styles.container}>
           <StatusBar style='light'/>
           <NativeRouter>
-            <ThemeProvider>
 
-              <ApiProvider>
+            <ApiProvider>
+              <ThemeProvider>
                 <MainHeader/>
 
                     <Routes>
@@ -180,8 +180,8 @@ export default function App() {
                     </Routes>
                     
                 <MainBottom/>
+              </ThemeProvider>
             </ApiProvider>
-          </ThemeProvider>
           </NativeRouter>
         </View>
       

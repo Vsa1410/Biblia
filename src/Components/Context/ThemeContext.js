@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Appearance, useColorScheme } from 'react-native'
 
 
@@ -9,10 +9,13 @@ export const ThemeProvider = ({children}) => {
     const colorScheme = Appearance.getColorScheme()
     console.log(colorScheme)
     
-    if (colorScheme === 'dark'){
-        setDarkMode(true)
-    }
+    useEffect(()=>{
+        if (colorScheme === 'dark'){
+            setDarkMode(true)
+        }
 
+    }, [setDarkMode])
+    
     const toggleTheme=() => {
         if(isDarkMode ===false){
 

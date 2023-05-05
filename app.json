@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Biblia",
-    "slug": "biblia",
+    "slug": "bible",
     "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,7 +27,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#2A4B24",
-        "versionCode": 2
+        "versionCode": "1.1"
       },
       "package": "com.vsa1410.bible"
     },
